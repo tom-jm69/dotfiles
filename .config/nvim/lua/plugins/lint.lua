@@ -8,7 +8,7 @@ return {
 		config = function()
 			local lint = require("lint")
 
-			lint.linter_by_file = {
+			lint.linter_by_ft = {
 				dockerfile = { "hadolint" },
 				go = { "golangcilint" },
 				lua = { "selene", "luacheck" },
@@ -16,8 +16,8 @@ return {
 				yaml = { "yamllint" },
 				ansible = { "ansiblelint" },
 				terraform = { "tfsec", "tflint" },
-				python = { "mypy", "ruff" },
-				-- markdown = { "vale", "markdownlint" },
+				python = { "pylint" , "pydocstyle" },
+				markdown = { "vale", "markdownlint" },
 			}
 
 			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

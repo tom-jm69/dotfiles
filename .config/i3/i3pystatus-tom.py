@@ -33,35 +33,36 @@ status.register(
     # status_command="bash -c 'nmcli co show id Home | grep connected && echo ActiveState=active | grep ActiveState=active'",)
     status_command="bash -c 'nmcli co show id Home | grep GENERAL.STATE && echo ActiveState=active | grep ActiveState=active'",
 )
-#apiurl= https://api.openweathermap.org/data/2.5/weather?q=Rosenheim&appid=e9257f0320526df457428b6c5c4b502f
 
 status.register(
     "weather",
-    format=" {current_temp}°C {humidity}% {icon}",
+    format="{current_temp}°C {humidity}% {icon}",
     color=purple,
     backend=openweathermap.Openweathermap(
         city="Rosenheim",
         appid="e9257f0320526df457428b6c5c4b502f",
     ),
 )
-# Note: the network module requires PyPI package netifaces
-status.register(
-    "network",
-    interface="enx000ec6c61fbb",
-    color_down=red,
-    format_up=" 🌤 eth0: {v4cidr}",
-)
-
-# Note: requires both netifaces and basiciw (for essid and quality)
 
 status.register(
     "network",
     interface="wlp0s20f3",
     color_down=red,
-    format_up=" wlan: {v4cidr} {quality:03.0f} %)",
+    format_up=" 󰖩  ",
+    format_down=" 󰖪 ",
+    on_leftclick="nmcli radio wifi `nmcli r wifi | grep enabled -c | sed -e 's/1/off/' | sed -e 's/0/on/'`",
+    interval=2,
 )
 
-
+status.register(
+    "network",
+    interface="enx000ec6c61fbb",
+    color_down=red,
+    format_up=" 󱊪 ",
+    format_down=" 󰌙 ",
+    on_leftclick="nm-connection-editor",
+    interval=2,
+)
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
 
@@ -69,7 +70,7 @@ status.register(
     "load",
     color=white,
     on_leftclick="alacritty -e=htop",
-    format=" 🖥 load: {avg1} | {avg5} | {avg15}",
+    format=" 󰝲 load: {avg1} | {avg5} | {avg15} ",
 )
 
 status.register(
@@ -78,22 +79,23 @@ status.register(
     warn_color="#E5E500",
     alert_color="#FF1919",
     on_leftclick="alacritty -e=htop",
-    format=" {avail_mem}/{total_mem} GB",
+    format="   {avail_mem}/{total_mem} GB ",
     divisor=1073741824,
 )
 
 status.register(
     "disk",
-    color=white,
+    color=green,
     path="/home",
     on_leftclick="pcmanfm",
-    format=" {avail} GB",
+    format="  {avail} GB / {total} GB ",
+    critical_color=red,
 )
 
 status.register(
     "backlight",
     interval=5,
-    format="  {percentage:.0f}% ",
+    format="   {percentage:.0f}% ",
     backlight="intel_backlight",
 )
 
@@ -101,7 +103,7 @@ status.register(
     "battery",
     battery_ident="BAT0",
     interval=5,
-    format="{status} {percentage:.0f}%",
+    format="{status} {percentage:.0f}% ",
     alert=True,
     alert_percentage=15,
     color="#FFFFFF",
@@ -117,7 +119,7 @@ status.register(
 
 status.register(
     "updates",
-    format=" Updates: {count}",
+    format=" Updates: {count} ",
     format_working=" In progress ",
     format_no_updates=" No updates ",
     backends=[aptget.AptGet()],
@@ -127,8 +129,9 @@ status.register(
     "pulseaudio",
     color_unmuted="#98C379",
     color_muted="#E06C75",
-    format_muted=" [muted]",
-    format="  {volume}% ",
+    format_muted=" 󰓄 ",
+    format=" 󰜟  {volume}% ",
+    on_leftclick="pactl set-sink-mute 0 toggle",
 )
 
 status.register(

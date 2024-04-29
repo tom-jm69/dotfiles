@@ -13,7 +13,21 @@ set $mod Mod1
 set $sup Mod4
 
 
+
+#exec --no-startup-id picom --config ~/.config/i3/picom.conf -b
+# class                 border  backgr. text    indicator child_border
+client.focused          #879985 #0D9E9B #000000 #5DDFF4   #285577
+client.focused_inactive #333333 #32516A #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #E00000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #ffffff
+set $base_path /home/tom/.config/i3
 exec --no-start
+exec --no-startup-id feh --bg-scale $base_path/assets/wallpaper.png
+exec killall -q notifier
+exec --no-startup-id dunst
 #set background image
 # Make alacritty with class lockscreen open in fullscreen
 #for_window [class="^lockscreen$"] fullscreen enable
@@ -47,6 +61,12 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+# backlight
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -60,7 +80,8 @@ floating_modifier Mod1
 # start a terminal
 #bindsym Mod1+Return exec xfce4-terminal
 bindsym Mod1+Return exec alacritty
-bindsym Mod1+x exec /home/tom/.config/i3/scripts/xrandr.sh
+#bindsym Mod1+x exec /home/tom/.config/i3/scripts/xrandr.sh
+bindsym Mod1+x exec autorandr work
 # bindsym Mod1+b exec firefox
 # bindsym Mod1+n exec "tmux new-window 'w3m duckduckgo.com'"
 #bindsym Mod1+i exec ~/scripts/tmux-cht.sh
@@ -72,7 +93,9 @@ bindsym Mod1+x exec /home/tom/.config/i3/scripts/xrandr.sh
 bindsym Mod1+w kill
 
 # start dmenu (a program launcher)
-bindsym Mod1+d exec --no-startup-id dmenu_run -fn 20
+#bindsym Mod1+d exec --no-startup-id dmenu_run -fn 20
+
+bindsym Mod1+d exec "dmenu_run -nf '#6B36BB' -nb '#222222' -sb '#77204E' -sf '#EEEEEE' -fn 'monospace-10' -p 'Dmenu prompt:'"
 #bindsym Mod1+s exec --no-startup-id rofi -show ssh
 #bindsym Mod1+w exec --no-startup-id rofi -show window
 #bindsym Mod1+Shift+f exec --no-startup-id rofi -show filebrowser -show-icons -theme dt-center.rasi
@@ -129,6 +152,7 @@ bindsym Mod1+f fullscreen toggle
 
 
 bindsym Mod4+l exec i3lock
+
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym Mod1+s layout stacking
@@ -244,21 +268,21 @@ bar {
     position top
 }
 bar {
-    output eDP-1-1
+    output DP-1-2-1-8
     status_command    /usr/bin/python3 ~/.config/i3/i3pystatus-tom.py
     workspace_buttons yes
-    font pango:source firacode nerd font 8
+    font pango:source firacode nerd font 15
     tray_output none
     position top
 }
-
-bar {
-    output DP-2
-    status_command    /usr/bin/python3 ~/.config/i3/i3pystatus-johannes.py
-    workspace_buttons yes
-    font pango:source firacode nerd font 9
-    position top
-}
+#
+#bar {
+#    output DP-1-2-1-8
+#    status_command    /usr/bin/python3 ~/.config/i3/i3pystatus-johannes.py
+#    workspace_buttons yes
+#    font pango:source firacode nerd font 9
+#    position top
+#}
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
@@ -285,7 +309,7 @@ exec --no-startup-id xset r rate 250 80
 
 ## Clipboard Screenshots
 bindsym Print       exec flameshot full
-bindsym Shift+Print exec flameshot gui
+bindsym Ctrl+Print exec flameshot gui
 
 #bindsym Mod1+p exec i3lock -c 000000
 

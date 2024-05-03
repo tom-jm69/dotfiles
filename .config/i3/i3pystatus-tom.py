@@ -97,6 +97,8 @@ status.register(
     interval=5,
     format="   {percentage:.0f}% ",
     backlight="intel_backlight",
+    on_leftclick="xbacklight -inc 5",
+    on_rightclick="xbacklight -dec 5",
 )
 
 status.register(
@@ -132,6 +134,8 @@ status.register(
     format_muted=" 󰓄 ",
     format=" 󰜟  {volume}% ",
     on_leftclick="pactl set-sink-mute 0 toggle",
+    on_upscroll = "pactl set-sink-volume 0 +5%",
+    on_downscroll = "pactl set-sink-volume 0 -5%",
 )
 
 status.register(

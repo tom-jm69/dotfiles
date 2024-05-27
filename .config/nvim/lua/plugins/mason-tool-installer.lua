@@ -28,6 +28,7 @@ return {
           "stylua", -- lua
           "yamlfmt", -- yaml
           -- # dap
+          "gopls", -- go
           "bash-debug-adapter", -- bash
         }
       })

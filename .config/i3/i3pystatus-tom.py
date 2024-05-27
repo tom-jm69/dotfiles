@@ -30,7 +30,6 @@ status.register(
     "openvpn",
     vpn_name=" VPN",
     on_leftclick="gnome-control-center",
-    # status_command="bash -c 'nmcli co show id Home | grep connected && echo ActiveState=active | grep ActiveState=active'",)
     status_command="bash -c 'nmcli co show id Home | grep GENERAL.STATE && echo ActiveState=active | grep ActiveState=active'",
 )
 
@@ -88,7 +87,7 @@ status.register(
     color=green,
     path="/home",
     on_leftclick="pcmanfm",
-    format="  {avail} GB / {total} GB ",
+    format=" {avail} GB / {total} GB ",
     critical_color=red,
 )
 
@@ -134,8 +133,9 @@ status.register(
     format_muted=" 󰓄 ",
     format=" 󰜟  {volume}% ",
     on_leftclick="pactl set-sink-mute 0 toggle",
-    on_upscroll = "pactl set-sink-volume 0 +5%",
-    on_downscroll = "pactl set-sink-volume 0 -5%",
+    on_rightclick="pavucontrol",
+    on_upscroll="pactl set-sink-volume 0 +5%",
+    on_downscroll="pactl set-sink-volume 0 -5%",
 )
 
 status.register(

@@ -14,7 +14,7 @@ set $sup Mod4
 
 
 
-#exec --no-startup-id picom --config ~/.config/i3/picom.conf -b
+exec --no-startup-id picom --config ~/.config/i3/picom.conf -b
 # class                 border  backgr. text    indicator child_border
 client.focused          #879985 #0D9E9B #000000 #5DDFF4   #285577
 client.focused_inactive #333333 #32516A #FFFFFF #484E50   #5F676A
@@ -222,7 +222,7 @@ bindsym Mod1+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -273,19 +273,28 @@ bar {
     output primary
     status_command    /usr/bin/python3 ~/.config/i3/i3pystatus-tom.py
     workspace_buttons yes
-    font pango:source firacode nerd font 13
+    font pango:source firacode nerd font 12
     tray_output none
     position top
 }
 
 bar {
-    output DP-1-2-1-8
+    output DP-2-1-8
     status_command    /usr/bin/python3 ~/.config/i3/i3pystatus-tom.py
     workspace_buttons yes
     font pango:source firacode nerd font 12
     tray_output none
     position top
 }
+
+#bar {
+#    output eDP-1-1
+#    status_command    /usr/bin/python3 ~/.config/i3/i3pystatus-tom.py
+#    workspace_buttons yes
+#    font pango:source firacode nerd font 12
+#    tray_output none
+#    position top
+#}
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used their favorite modifier (alt or windows)
@@ -307,7 +316,6 @@ bindsym Mod1+c exec --no-startup-id clipmenu
 exec --no-startup-id nm-applet --sm-disable
 exec --no-startup-id xautolock -time 5 -locker 'i3lock -c 000000'
 exec --no-startup-id ~/scripts/xrandr.sh
-exec --no-startup-id xset r rate 250 80
 
 ## Clipboard Screenshots
 bindsym Print       exec flameshot full

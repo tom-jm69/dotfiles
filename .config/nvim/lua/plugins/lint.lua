@@ -17,7 +17,7 @@ return {
 				ansible = { "ansiblelint" },
 				terraform = { "tfsec", "tflint" },
 				python = { "pylint" , "pydocstyle" },
-				markdown = { "vale", "markdownlint" },
+				markdown = { "markdownlint" },
 			}
 
 			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

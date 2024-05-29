@@ -26,17 +26,17 @@ yellow = "#DDDD11"
 #     path="/var/run/openvpn.pid"￼,)
 
 
-status.register(
-    "openvpn",
-    vpn_name=" VPN",
-    on_leftclick="gnome-control-center",
-    status_command="bash -c 'nmcli co show id Home | grep GENERAL.STATE && echo ActiveState=active | grep ActiveState=active'",
-)
+#status.register(
+#    "openvpn",
+#    vpn_name=" VPN",
+#    on_leftclick="gnome-control-center",
+#    status_command="bash -c 'nmcli co show id Home | grep GENERAL.STATE && echo ActiveState=active | grep ActiveState=active'",
+#)
 
 status.register(
     "weather",
-    format="{current_temp}°C {humidity}% {icon}",
-    color=purple,
+    format="{current_temp}°C {icon} {humidity}% ",
+    color=white,
     backend=openweathermap.Openweathermap(
         city="Rosenheim",
         appid="e9257f0320526df457428b6c5c4b502f",
@@ -67,7 +67,7 @@ status.register(
 
 status.register(
     "load",
-    color=white,
+    color=blue,
     on_leftclick="alacritty -e=htop",
     format=" 󰝲 load: {avg1} | {avg5} | {avg15} ",
 )
@@ -104,7 +104,7 @@ status.register(
     "battery",
     battery_ident="BAT0",
     interval=5,
-    format="{status} {percentage:.0f}% ",
+    format="{status}   {percentage:.0f}% ",
     alert=True,
     alert_percentage=15,
     color="#FFFFFF",
@@ -120,6 +120,7 @@ status.register(
 
 status.register(
     "updates",
+    color=yellow,
     format=" Updates: {count} ",
     format_working=" In progress ",
     format_no_updates=" No updates ",

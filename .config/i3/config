@@ -14,7 +14,7 @@ set $sup Mod4
 
 
 
-exec --no-startup-id picom --config ~/.config/i3/picom.conf -b
+exec --no-startup-id picom --config ~/.config/i3/picom.conf -b --vsync
 # class                 border  backgr. text    indicator child_border
 client.focused          #879985 #0D9E9B #000000 #5DDFF4   #285577
 client.focused_inactive #333333 #32516A #FFFFFF #484E50   #5F676A
@@ -311,6 +311,7 @@ bar {
 # clipboard
 exec --no-startup-id autocutsel
 exec --no-startup-id autocutsel -s PRIMARY
+exec --no-startup-id clipmenu -ud
 bindsym Mod1+c exec --no-startup-id clipmenu
 
 exec --no-startup-id nm-applet --sm-disable

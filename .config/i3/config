@@ -15,6 +15,7 @@ set $sup Mod4
 
 
 exec --no-startup-id picom --config ~/.config/i3/picom.conf -b --vsync
+exec --no-startup-id dbus-launch nm-applet
 # class                 border  backgr. text    indicator child_border
 client.focused          #879985 #0D9E9B #000000 #5DDFF4   #285577
 client.focused_inactive #333333 #32516A #FFFFFF #484E50   #5F676A
@@ -26,7 +27,7 @@ client.background       #ffffff
 
 set $base_path /home/tom/.config/i3
 exec --no-start
-exec --no-startup-id feh --bg-scale $base_path/assets/wallpaper.png
+#exec --no-startup-id feh --bg-scale $base_path/assets/wallpaper.png
 exec killall -q notifier
 exec --no-startup-id dunst
 exec --no-startup-id xset r rate 250 80
@@ -185,7 +186,7 @@ bindsym Mod1+Shift+minus scratchpad show
 set $ws1 "1:tmux"
 set $ws2 "2:tmux"
 set $ws3 "3:browser"
-set $ws4 "4"
+set $ws4 "4:bitwarden"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -274,7 +275,6 @@ bar {
     status_command    /usr/bin/python3 ~/.config/i3/i3pystatus-tom.py
     workspace_buttons yes
     font pango:source firacode nerd font 12
-    tray_output none
     position top
 }
 
@@ -283,7 +283,6 @@ bar {
     status_command    /usr/bin/python3 ~/.config/i3/i3pystatus-tom.py
     workspace_buttons yes
     font pango:source firacode nerd font 12
-    tray_output none
     position top
 }
 

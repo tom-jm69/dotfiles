@@ -55,7 +55,7 @@ status.register(
 
 status.register(
     "network",
-    interface="enx000ec6c61fbb",
+    interface="en*",
     color_down=red,
     format_up=" 󱊪 ",
     format_down=" 󰌙 ",

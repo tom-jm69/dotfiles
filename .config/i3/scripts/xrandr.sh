@@ -23,6 +23,13 @@ elif [ $(echo "$displays" | wc -w) -eq 3]; then
 else
     echo "External display"
 fi
+#if type "xrandr"; then
+#  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+#    MONITOR=$m polybar --reload example &
+#  done
+#else
+#  polybar --reload example &
+#fi
 #    internal_display=$(echo $displays | awk '{print $1}')
 #    external_display=$(echo $displays | awk '{print $2}')
 #    second_external_display=$(echo $displays | awk '{print $3}')

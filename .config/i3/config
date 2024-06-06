@@ -14,8 +14,12 @@ set $sup Mod4
 
 
 
-exec --no-startup-id picom --config ~/.config/i3/picom.conf -b --vsync
+exec_always --no-startup-id picom --config ~/.config/i3/picom.conf -b --vsync
+exec_always xset r rate 250 80
 exec --no-startup-id dbus-launch nm-applet
+
+# exec_always --no-startup-id ~/.i3/scripts/polybar.sh &
+
 # class                 border  backgr. text    indicator child_border
 client.focused          #879985 #0D9E9B #000000 #5DDFF4   #285577
 client.focused_inactive #333333 #32516A #FFFFFF #484E50   #5F676A
@@ -273,6 +277,7 @@ bindsym Mod1+r mode "resize"
 bar {
     output primary
     status_command    /usr/bin/python3 ~/.config/i3/i3pystatus-tom.py
+    #status_command  polybar
     workspace_buttons yes
     font pango:source firacode nerd font 12
     position top
@@ -281,6 +286,7 @@ bar {
 bar {
     output DP-2-1-8
     status_command    /usr/bin/python3 ~/.config/i3/i3pystatus-tom.py
+    #status_command  polybar
     workspace_buttons yes
     font pango:source firacode nerd font 12
     position top

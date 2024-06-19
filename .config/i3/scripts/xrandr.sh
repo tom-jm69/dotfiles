@@ -15,10 +15,10 @@ fi
 if [ $(echo "$displays" | wc -w) -eq 1 ]; then
     echo "Internal display"
 
-elif [ $(echo "$displays" | wc -w) -eq 2]; then
+elif [ $(echo "$displays" | wc -w) -eq 2 ]; then
     echo "External display"
 
-elif [ $(echo "$displays" | wc -w) -eq 3]; then
+elif [ $(echo "$displays" | wc -w) -eq 3 ]; then
     echo "External display"
 else
     echo "External display"

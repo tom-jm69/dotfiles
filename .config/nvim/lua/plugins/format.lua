@@ -18,15 +18,10 @@ return {
 					sh = { "beautysh" },
 					terraform = { "terraform_fmt" },
 					yaml = { "yamlfmt", "prettier" },
-					python = { "isort", "black" },
+					-- python = { "isort", "black" },
+					python = { "isort", "ruff_fix", "ruff_organize_imports" , "pylint" },
 					go = { "goimports", "gofmt" },
 				},
-
-				--				format_on_save = {
-				--					lsb_fallback = true,
-				--					async = false,
-				--					timeout_ms = 500,
-				--				},
 			})
 
 			vim.keymap.set({ "n", "v" }, "<leader>tf", function()

@@ -38,8 +38,8 @@ status.register(
     format="{current_temp}°C {icon} {humidity}% ",
     color=white,
     backend=openweathermap.Openweathermap(
-        city="Rosenheim",
-        appid="e9257f0320526df457428b6c5c4b502f",
+        city="",
+        appid="",
     ),
 )
 

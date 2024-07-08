@@ -16,7 +16,7 @@ set $sup Mod4
 
 exec_always --no-startup-id picom --config ~/.config/i3/picom.conf -b --vsync
 exec_always xset r rate 250 80
-exec --no-startup-id feh --bg-scale ~/Pictures/mickey_wallpaper.jpeg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/mickey_wallpaper.jpeg
 exec --no-startup-id dbus-launch nm-applet
 
 exec_always --no-startup-id ~/.config/i3/scripts/polybar.sh
@@ -158,7 +158,6 @@ bindsym Mod1+v split v
 bindsym Mod1+f fullscreen toggle
 
 
-bindsym Mod4+l exec i3lock
 
 
 # change container layout (stacked, tabbed, toggle split)
@@ -321,12 +320,13 @@ exec --no-startup-id clipmenu -ud
 bindsym Mod1+c exec --no-startup-id clipmenu
 
 exec --no-startup-id nm-applet --sm-disable
-exec --no-startup-id xautolock -time 5 -locker 'i3lock -c 000000'
+exec --no-startup-id xautolock -time 5 -locker 'i3lock -c 000000 -i ~/Pictures/mickey_wallpaper.png'
 exec --no-startup-id ~/scripts/xrandr.sh
 
 ## Clipboard Screenshots
 bindsym Print       exec flameshot full
 bindsym Ctrl+Print exec flameshot gui -p ~/Pictures/Screenshots -c
+bindsym Mod4+l exec i3lock -t -f -b -i ~/Pictures/mickey_wallpaper.png
 
 #bindsym Mod1+p exec i3lock -c 000000
 

@@ -93,13 +93,14 @@ vim.api.nvim_set_keymap("n", "<leader>v", ":AnsibleDocVSplit<CR>", { silent = tr
 -- save as root
 vim.api.nvim_set_keymap('c', "w!!", '<cmd>SudoSaveFile<CR>', { noremap = true, silent = true })
 
+
 -- trim_whitespace
-vim.api.nvim_exec(
-	[[
-  augroup trim_whitespace
-    autocmd!
-    autocmd BufWritePre * %s/\s\+$//e
-  augroup END
-]],
-	false
-)
+--vim.api.nvim_exec(
+--	[[
+--  augroup trim_whitespace
+--    autocmd!
+--    autocmd BufWritePre * %s/\s\+$//e
+--  augroup END
+--]],
+--	false
+--)

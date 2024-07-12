@@ -191,7 +191,7 @@ set $ws1 "1:tmux"
 set $ws2 "2:tmux"
 set $ws3 "3:browser"
 set $ws4 "4:bitwarden"
-set $ws5 "5"
+set $ws5 "5:slack"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8:bitwarden"
@@ -314,9 +314,9 @@ bindsym Mod1+r mode "resize"
 
 
 # clipboard
-exec --no-startup-id autocutsel
-exec --no-startup-id autocutsel -s PRIMARY
-exec --no-startup-id clipmenu -ud
+exec_always --no-startup-id autocutsel
+exec_always --no-startup-id autocutsel -s PRIMARY
+exec_always --no-startup-id clipmenud -u
 bindsym Mod1+c exec --no-startup-id clipmenu
 
 exec --no-startup-id nm-applet --sm-disable

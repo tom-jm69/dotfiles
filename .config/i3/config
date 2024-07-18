@@ -22,11 +22,11 @@ exec --no-startup-id dbus-launch nm-applet
 exec_always --no-startup-id ~/.config/i3/scripts/polybar.sh
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #879985 #0D9E9B #000000 #5DDFF4   #285577
-client.focused_inactive #333333 #32516A #FFFFFF #484E50   #5F676A
-client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.focused          #333333 #333333 #FFFFFF #333333   #285577
+client.focused_inactive #333333 #333333 #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #333333 #888888 #292D2E   #222222
 client.urgent           #2F343A #E00000 #FFFFFF #900000   #900000
-client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+client.placeholder      #333333 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #ffffff
 

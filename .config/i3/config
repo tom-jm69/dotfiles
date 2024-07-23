@@ -20,6 +20,7 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/mickey_wallpaper.jpeg
 exec --no-startup-id dbus-launch nm-applet
 
 exec_always --no-startup-id ~/.config/i3/scripts/polybar.sh
+exec_always autorandr --change
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #333333 #333333 #FFFFFF #333333   #285577
@@ -28,7 +29,7 @@ client.unfocused        #333333 #333333 #888888 #292D2E   #222222
 client.urgent           #2F343A #E00000 #FFFFFF #900000   #900000
 client.placeholder      #333333 #0C0C0C #FFFFFF #000000   #0C0C0C
 
-client.background       #ffffff
+#client.background       #ffffff
 
 set $base_path /home/tom/.config/i3
 exec --no-start
@@ -88,7 +89,7 @@ set $right l
 #bindsym Mod1+Return exec xfce4-terminal
 bindsym Mod1+Return exec alacritty
 #bindsym Mod1+x exec /home/tom/.config/i3/scripts/xrandr.sh
-bindsym Mod1+x exec autorandr work
+bindsym Mod1+x exec autorandr --change
 # bindsym Mod1+b exec firefox
 # bindsym Mod1+n exec "tmux new-window 'w3m duckduckgo.com'"
 #bindsym Mod1+i exec ~/scripts/tmux-cht.sh
@@ -327,8 +328,3 @@ exec --no-startup-id ~/scripts/xrandr.sh
 bindsym Print       exec flameshot full
 bindsym Ctrl+Print exec flameshot gui -p ~/Pictures/Screenshots -c
 bindsym Mod4+l exec i3lock -t -f -b -i ~/Pictures/mickey_wallpaper.png
-
-#bindsym Mod1+p exec i3lock -c 000000
-
-
-# exec_always feh --bg-fill ~/Pictures/tower-nord.png

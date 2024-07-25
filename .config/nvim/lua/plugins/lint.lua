@@ -14,6 +14,7 @@ return {
 				lua = { "selene", "luacheck" },
 				sh = { "shellcheck" },
 				yaml = { "yamllint" },
+				dist = { "yamllint" },
 				ansible = { "ansible_lint" },
 				terraform = { "tfsec", "tflint" },
 				python = { "pylint" , "pydocstyle" },
@@ -24,7 +25,7 @@ return {
 			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
 			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-        pattern = { "*.tf", "*.py", "*.sh", "*.yaml", "*.yml", "*.go", "*.md", "*.lua" },
+        pattern = { "*.tf", "*.py", "*.sh", "*.yaml", "*.yml", "*.go", "*.md", "*.lua" , "*yaml.dist"},
 				group = lint_augroup,
 				callback = function()
 					lint.try_lint()

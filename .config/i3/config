@@ -327,4 +327,5 @@ exec --no-startup-id ~/scripts/xrandr.sh
 ## Clipboard Screenshots
 bindsym Print       exec flameshot full
 bindsym Ctrl+Print exec flameshot gui -p ~/Pictures/Screenshots -c
-bindsym Mod4+l exec i3lock -t -f -b -i ~/Pictures/mickey_wallpaper.png
+# bindsym Mod4+l exec i3lock -t -f -b -i ~/Pictures/mickey_wallpaper.png
+bindsym Mod4+l exec ~/.config/i3/scripts/i3-lock-beautify.sh 

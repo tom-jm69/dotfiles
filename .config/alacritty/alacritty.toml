@@ -1,0 +1,69 @@
+#theme = "Afterglow"
+
+[colors.bright]
+black = "#636363"
+blue = "#7eaac7"
+cyan = "#86d3ce"
+green = "#909d63"
+magenta = "#aa6292"
+red = "#bc5653"
+white = "#f7f7f7"
+yellow = "#ebc17a"
+
+[colors.cursor]
+cursor = "#aaaaaa"
+text = "#2c2c2c"
+
+[colors.dim]
+black = "#232323"
+blue = "#556b79"
+cyan = "#5c8482"
+green = "#5e6547"
+magenta = "#6e4962"
+red = "#74423f"
+white = "#828282"
+yellow = "#8b7653"
+
+[colors.normal]
+black = "#1c1c1c"
+blue = "#3465A0"
+cyan = "#86d3ce"
+green = "#477E0F"
+magenta = "#aa6292"
+red = "#cc0000"
+white = "#ffffff"
+yellow = "#ebc17a"
+
+[colors.primary]
+background = "#1e1e1e"
+#bright_background = "#1e1e1e"
+bright_foreground = "#d9d9d9"
+#dim_background = "#ffffff"
+dim_foreground = "#dbdbdb"
+foreground = "#ffffff"
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "FiraCode Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"

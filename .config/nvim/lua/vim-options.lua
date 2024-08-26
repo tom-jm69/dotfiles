@@ -22,7 +22,7 @@ vim.opt.shiftwidth = 2
 vim.opt.textwidth = 80
 vim.opt.wrap = false
 vim.opt.colorcolumn = "80"
-vim.opt.smartindent = true
+-- vim.opt.smartindent = true
 
 -- for filetypes
 vim.cmd("autocmd BufEnter *.sh setlocal tabstop=4 softtabstop=4 shiftwidth=4")

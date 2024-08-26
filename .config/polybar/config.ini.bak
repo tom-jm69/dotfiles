@@ -41,7 +41,7 @@ foreground = ${colors.foreground}
 
 line-size = 1.5pt
 
-border-size = 3pt
+border-size = 2pt
 border-color = #00000000
 
 padding-left = 1
@@ -374,7 +374,7 @@ label = %percentage_used:2%%
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU"
+format-prefix = "CPU "
 format-prefix-foreground = ${colors.primary}
 label = %percentage:2%%
 
@@ -394,7 +394,7 @@ label-disconnected = %ifname% %{F#ff0000}󱛅
 [module/eth]
 inherit = network-base
 interface-type = wired
-label-connected =  %downspeed%  %upspeed% %ifname% %{F#00FF00}󱊪
+label-connected = %ifname% %{F#00FF00}󱊪
 label-disconnected = %ifname% %{F#ff0000}󰌙
 
 [module/date]

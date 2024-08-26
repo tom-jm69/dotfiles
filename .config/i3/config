@@ -20,6 +20,8 @@ exec_always --no-startup-id xset r rate 250 80
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/milkyway_wqhd.jpg
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wp3169604-earth-nasa-wallpaper.jpg
 exec --no-startup-id dbus-launch nm-applet
+# nvidia
+exec nvidia-settings --config=/etc/.nvidia-settings-rc --load-config-only
 
 exec_always --no-startup-id ~/.config/i3/scripts/polybar.sh
 exec_always --no-startup-id ~/.config/i3/scripts/headset-light.sh
@@ -64,7 +66,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -325,7 +327,7 @@ exec_always --no-startup-id autocutsel -s PRIMARY
 exec_always --no-startup-id clipmenud -u
 bindsym Mod1+c exec --no-startup-id clipmenu
 
-exec --no-startup-id nm-applet --sm-disable
+#exec --no-startup-id nm-applet --sm-disable
 exec --no-startup-id xautolock -time 5 -locker 'i3lock -c 000000 -i ~/Pictures/mickey_wallpaper.png'
 #exec --no-startup-id ~/scripts/xrandr.sh
 

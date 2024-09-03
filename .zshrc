@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/opt/resolve/bin
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+ export PATH=$HOME/bin:/usr/local/bin:$PATH
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
@@ -158,7 +158,3 @@ alias ls='eza --group-directories-first --icons'
 ##
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #eval "$(zoxide init --cmd cd  zsh)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

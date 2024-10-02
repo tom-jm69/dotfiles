@@ -14,11 +14,11 @@ set $sup Mod4
 
 
 
-exec_always --no-startup-id picom --config ~/.config/i3/picom.conf -b --vsync
+#exec_always --no-startup-id picom --config ~/.config/i3/picom.conf -b --vsync
 exec_always --no-startup-id xset r rate 250 80
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/mickey_wallpaper.jpeg
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/milkyway_wqhd.jpg
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wp3169604-earth-nasa-wallpaper.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/milkyway.jpg
 exec --no-startup-id dbus-launch nm-applet
 # nvidia
 exec nvidia-settings --config=/etc/.nvidia-settings-rc --load-config-only
@@ -94,14 +94,14 @@ set $right l
 #bindsym Mod1+Return exec xfce4-terminal
 bindsym Mod1+Return exec alacritty
 #bindsym Mod1+x exec /home/tom/.config/i3/scripts/xrandr.sh
-bindsym Mod1+x exec autorandr --change
+bindsym Mod1+x exec python3 ~/.config/i3/scripts/monitor-switcher.py
 # bindsym Mod1+b exec firefox
 # bindsym Mod1+n exec "tmux new-window 'w3m duckduckgo.com'"
 #bindsym Mod1+i exec ~/scripts/tmux-cht.sh
 
 
 # kill focused window
-# bindsym Mod1+Shift+w kill
+# bindsym Mod1+Shif+w kill
 
 bindsym Mod1+w kill
 
@@ -195,16 +195,27 @@ bindsym Mod1+Shift+minus scratchpad show
 
 # define nam
 # we use variables to avoid repeating the names in multiple places.
-set $ws1 "1:tmux"
-set $ws2 "2:tmux"
-set $ws3 "3:browser"
-set $ws4 "4:bitwarden"
-set $ws5 "5:slack"
-set $ws6 "6:spotify"
+#set $ws1 "1:tmux"
+#set $ws2 "2:tmux"
+#set $ws3 "3:browser"
+#set $ws4 "4:bitwarden"
+#set $ws5 "5:slack"
+#set $ws6 "6:spotify"
+#set $ws7 "7"
+#set $ws8 "8:bitwarden"
+#set $ws9 "9:meet"
+#set $ws10 "10:slack"
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8:bitwarden"
-set $ws9 "9:meet"
-set $ws10 "10:slack"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym mod1+1 workspace number $ws1

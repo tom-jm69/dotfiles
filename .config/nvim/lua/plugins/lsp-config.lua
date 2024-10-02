@@ -18,11 +18,14 @@ return {
 				"tflint",
 				"terraformls",
 				"yamlls",
---				"pyright",
+				"pyright",
         "ruff_lsp",
 				"docker_compose_language_service",
 				"dockerls",
 				"marksman",
+        "cssls",
+        "terraformls",
+        "ruff", -- python
 			},
 		},
 	},
@@ -34,6 +37,9 @@ return {
 
 			local lspconfig = require("lspconfig")
 			lspconfig.tsserver.setup({
+				capabilites = capabilities,
+			})
+			lspconfig.cssls.setup({
 				capabilites = capabilities,
 			})
 			lspconfig.html.setup({
@@ -77,7 +83,7 @@ return {
 			})
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
-				filetypes = { "python" },
+        -- filetypes = { "python" },
 			})
 			lspconfig.docker_compose_language_service.setup({
 				capabilities = capabilities,

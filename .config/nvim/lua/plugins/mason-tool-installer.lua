@@ -30,6 +30,7 @@ return {
           -- # dap
           "gopls", -- go
           "bash-debug-adapter", -- bash
+          "hclfmt" -- tf hcl
         }
       })
 		end,

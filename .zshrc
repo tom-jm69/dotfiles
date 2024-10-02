@@ -1,9 +1,20 @@
 # If you come from bash you might have to change your $PATH.
+#zmodload zsh/zprof debug timing
 export ZSH="$HOME/.oh-my-zsh"
+export TERM=xterm-256color
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/opt/resolve/bin
- export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/home/tom/.spicetify
+. "$HOME/.cargo/env"
+export MODULAR_HOME="$HOME/.modular"
+export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
+export MODULAR_HOME="/home/tom/.modular"
+export PATH="/home/tom/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+export GOPATH=$HOME/go
+export SUDO_EDITOR="nvim"
+#export XDG_CURRENT_DESKTOP='ubuntu:GNOME'
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
@@ -27,10 +38,9 @@ plug "kutsan/zsh-system-clipboard"
 #plug "$HOME/.config/zsh/exports.zsh"
 
 # Load and initialise completion system
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(zoxide init --cmd cd  zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -134,27 +144,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#alias ssh="TERM=xterm-256color $(which ssh)"
 alias vim="nvim"
 alias q="exit"
 alias lg="lazygit"
-export MODULAR_HOME="$HOME/.modular"
-export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
-export MODULAR_HOME="/home/tom/.modular"
-export PATH="/home/tom/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
-export SUDO_EDITOR="nvim"
 alias sshs='~/script/search-hosts.sh'
 alias hosts='cat /etc/hosts | tr " " "\n" | fzf'
 alias ls='eza --group-directories-first --icons'
-#[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
-#plug "zsh-users/zsh-autosuggestions"
-#plug "zap-zsh/supercharge"
-##plug "zap-zsh/zap-prompt"
-#plug "zsh-users/zsh-syntax-highlighting"
-#autoload -Uz compinit
-#compinit
-#export VI_MODE_ESC_INSERT="jk" && plug "zap-zsh/vim"
+alias r='fc -s'
+alias act='source env/bin/activate'
+#zprof debug timing
+#eval "$(starship init zsh)"
 #
-## Load and initialise completion system
-##
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#eval "$(zoxide init --cmd cd  zsh)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

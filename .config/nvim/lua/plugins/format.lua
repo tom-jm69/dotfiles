@@ -11,7 +11,6 @@ return {
 					markdown = { "prettier" },
 					html = { "prettier" },
 					css = { "prettier" },
-
 					tex = { "latexindent" },
 					typst = { "typstfmt" },
 					lua = { "stylua" },
@@ -21,6 +20,7 @@ return {
 					-- python = { "isort", "black" },
 					python = { "isort", "ruff_fix", "ruff_organize_imports" , "pylint" },
 					go = { "goimports", "gofmt" },
+          hcl = { "hclfmt" },
 				},
 			})
 

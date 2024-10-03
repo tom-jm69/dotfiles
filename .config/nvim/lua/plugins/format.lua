@@ -21,6 +21,7 @@ return {
 					python = { "isort", "ruff_fix", "ruff_organize_imports" , "pylint" },
 					go = { "goimports", "gofmt" },
           hcl = { "hclfmt" },
+          sql = { "sql-formatter" },
 				},
 			})
 

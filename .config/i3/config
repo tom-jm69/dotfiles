@@ -27,7 +27,7 @@ exec_always --no-startup-id ~/.config/i3/scripts/headset-light.sh
 exec_always autorandr --change
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #333333 #333333 #FFFFFF #333333   #285577
+client.focused          #333333 #333333 #FFFFFF #333333   #333333
 client.focused_inactive #333333 #333333 #FFFFFF #484E50   #5F676A
 client.unfocused        #333333 #333333 #888888 #292D2E   #222222
 client.urgent           #2F343A #E00000 #FFFFFF #900000   #900000

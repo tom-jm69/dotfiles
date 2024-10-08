@@ -153,6 +153,17 @@ alias hosts='cat /etc/hosts | tr " " "\n" | fzf'
 alias ls='eza --group-directories-first --icons'
 alias r='fc -s'
 alias act='source env/bin/activate'
+rm() {
+  echo "Are you sure you want to delete the following file(s)?"
+  echo "$@"
+  echo -n "Type 'yes' to confirm: "
+  read confirmation
+  if [[ $confirmation == "yes" ]]; then
+    /bin/rm "$@"
+  else
+    echo "Aborted!"
+  fi
+}
 #zprof debug timing
 #eval "$(starship init zsh)"
 #

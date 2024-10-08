@@ -20,7 +20,7 @@ exec_always --no-startup-id xset r rate 250 80
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wp3169604-earth-nasa-wallpaper.jpg
 exec --no-startup-id dbus-launch nm-applet
 # nvidia
-exec nvidia-settings --config=/etc/.nvidia-settings-rc --load-config-only
+exec ~/.config/i3/scripts/nvidia-settings.sh
 
 exec_always --no-startup-id ~/.config/i3/scripts/polybar.sh
 exec_always --no-startup-id ~/.config/i3/scripts/headset-light.sh

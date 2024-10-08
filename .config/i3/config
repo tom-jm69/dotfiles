@@ -12,7 +12,7 @@
 set $mod Mod1
 set $sup Mod4
 
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf --vsync
 exec_always --no-startup-id xset r rate 250 80
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/mickey_wallpaper.jpeg
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/milkyway_wqhd.jpg

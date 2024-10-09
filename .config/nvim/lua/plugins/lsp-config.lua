@@ -39,9 +39,6 @@ return {
 --			lspconfig.tsserver.setup({
 --				capabilites = capabilities,
 --			})
-			lspconfig.ts_ls.setup({
-				capabilites = capabilities,
-			})
 			lspconfig.cssls.setup({
 				capabilites = capabilities,
 			})
@@ -62,6 +59,16 @@ return {
 			})
 			lspconfig.terraformls.setup({
 				capabilities = capabilities,
+			})
+			lspconfig.ltex.setup({
+				capabilities = capabilities,
+        filetypes = { "plaintex", "rst", "rnoweb", "tex", "text", "txt" },
+        settings = {
+          ltex = {
+            language = "de-DE",
+            enabled = { "plaintex", "rst", "rnoweb", "tex", "text", "txt" },
+          },
+        },
 			})
 			lspconfig.yamlls.setup({
 				capabilities = capabilities,

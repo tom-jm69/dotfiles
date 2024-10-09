@@ -14,6 +14,8 @@ export MODULAR_HOME="/home/tom/.modular"
 export PATH="/home/tom/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
 export GOPATH=$HOME/go
 export SUDO_EDITOR="nvim"
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf
 #export XDG_CURRENT_DESKTOP='ubuntu:GNOME'
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -153,6 +155,7 @@ alias hosts='cat /etc/hosts | tr " " "\n" | fzf'
 alias ls='eza --group-directories-first --icons'
 alias r='fc -s'
 alias act='source env/bin/activate'
+
 rm() {
   echo "Are you sure you want to delete the following file(s)?"
   echo "$@"
@@ -164,6 +167,9 @@ rm() {
     echo "Aborted!"
   fi
 }
+alias p='pass fzf'
+alias pws='pass fzf -s'
+alias pw='~/.config/i3/scripts/create_pass_entry.sh'
 #zprof debug timing
 #eval "$(starship init zsh)"
 #

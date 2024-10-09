@@ -7,6 +7,7 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/opt/resolve/bin
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/home/tom/.spicetify
+export PATH=$PATH:~/.local/share/ltex-ls-16.0.0/bin
 . "$HOME/.cargo/env"
 export MODULAR_HOME="$HOME/.modular"
 export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"

@@ -39,7 +39,8 @@ set $base_path /home/tom/.config/i3
 exec --no-start
 #exec --no-startup-id feh --bg-scale $base_path/assets/wallpaper.png
 exec killall -q notifier
-exec --no-startup-id dunst
+exec_always killall dunst
+exec_always --no-startup-id dunst
 exec --no-startup-id xset r rate 250 80
 #set background image
 # Make alacritty with class lockscreen open in fullscreen

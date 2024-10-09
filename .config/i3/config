@@ -113,7 +113,7 @@ bindsym Mod1+d exec ~/.config/rofi/launchers/type-1/launcher.sh
 #bindsym Mod1+s exec --no-startup-id rofi -show ssh
 #bindsym Mod1+w exec --no-startup-id rofi -show window
 #bindsym Mod1+Shift+f exec --no-startup-id rofi -show filebrowser -show-icons -theme dt-center.rasi
-#bindsym Mod1+p exec ~/scripts/passmenu
+bindsym Mod1+p exec ~/.config/i3/scripts/passmenu.sh
 #bindsym Mod1+b exec ~/.bin/bwc-password.sh
 #bindsym Mod1+Shift+v exec ~/scripts/hosts_selector.sh
 #bindsym Mod4+l exec ~/scripts/lockscreen.sh

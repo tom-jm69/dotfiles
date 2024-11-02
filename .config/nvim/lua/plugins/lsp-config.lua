@@ -26,6 +26,7 @@ return {
         "cssls",
         "terraformls",
         "ruff", -- python
+        "rust-analyzer",
 			},
 		},
 	},
@@ -58,6 +59,12 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.terraformls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.bacon.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.ltex.setup({

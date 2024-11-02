@@ -22,6 +22,7 @@ return {
 					go = { "goimports", "gofmt" },
           hcl = { "hclfmt" },
           sql = { "sql-formatter" },
+          rust = { "rustfmt", lsp_format = "fallback" },
 				},
 			})
 

@@ -16,7 +16,7 @@ exec_always --no-startup-id picom --config ~/.config/picom/picom.conf --vsync
 exec_always --no-startup-id xset r rate 250 80
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/mickey_wallpaper.jpeg
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/milkyway_wqhd.jpg
-exec_always --no-startup-id feh --bg-scale ~/.config/i3/low-poly-grid-haikei.png
+exec_always --no-startup-id feh --bg-scale ~/.config/i3/assets/low-poly-grid-haikei.png
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/milkyway.jpg
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/wp3169604-earth-nasa-wallpaper.jpg
 exec_always --no-startup-id sh -c "killall nm-applet; nm-applet"

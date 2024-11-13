@@ -19,3 +19,8 @@ else
     # If not connected, display disconnected status
     echo "<span color=\"#91d7e3\">󰌙</span> Disconnected"
 fi
+if [ "$BLOCK_BUTTON" == "1" ]; then
+    # Display the alternate format
+    nm-connection-editor
+
+fi

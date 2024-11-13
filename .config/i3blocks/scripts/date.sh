@@ -8,8 +8,6 @@ alternate_format="date '+%V. KW %d.%m.%Y'"
 if [ "$BLOCK_BUTTON" == "1" ]; then
     # Display the alternate format
     eval "$alternate_format"
-    # sleep 5
-    eval "$default_format"
 
     # Wait for 5 seconds
 else

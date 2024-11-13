@@ -15,15 +15,16 @@ set $sup Mod4
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf --vsync
 exec_always --no-startup-id xset r rate 250 80
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/mickey_wallpaper.jpeg
-exec_always --no-startup-id feh --bg-scale ~/Pictures/milkyway_wqhd.jpg
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/milkyway_wqhd.jpg
+exec_always --no-startup-id feh --bg-scale ~/.config/i3/low-poly-grid-haikei.png
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/milkyway.jpg
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/wp3169604-earth-nasa-wallpaper.jpg
-exec_always --no-startup-id dbus-launch nm-applet
+exec_always --no-startup-id sh -c "killall nm-applet; nm-applet"
 
 # nvidia
 exec ~/.config/i3/scripts/nvidia-settings.sh
 
-exec_always --no-startup-id ~/.config/i3/scripts/polybar.sh
+# exec_always --no-startup-id ~/.config/i3/scripts/polybar.sh
 exec_always --no-startup-id ~/.config/i3/scripts/headset-light.sh
 exec_always autorandr --change
 
@@ -33,6 +34,7 @@ client.focused_inactive #333333 #333333 #FFFFFF #484E50   #5F676A
 client.unfocused        #333333 #333333 #888888 #292D2E   #222222
 client.urgent           #2F343A #E00000 #FFFFFF #900000   #900000
 client.placeholder      #333333 #0C0C0C #FFFFFF #000000   #0C0C0C
+
 
 #client.background       #ffffff
 
@@ -224,6 +226,26 @@ bindsym Mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec --no-startup-id ~/.config/rofi/powermenu/type-4/powermenu.sh
 
+bar {
+  i3bar_command i3bar
+  position top 
+  tray_output primary
+  tray_padding 5
+  font pango:JetBrainsMono Nerd Font 13
+  strip_workspace_numbers no
+  padding 0px 5px 0px 0px 
+
+  status_command i3blocks
+  colors {
+   background #24273a
+   # class             border background text
+   focused_workspace   #282828 #91d7e3 #181926
+   active_workspace    #282828 #98971a #8FBCBB
+   inactive_workspace  #282828 #7dc4e4 #181926
+   urgent_workspace    #282828 #ed8796 #BF616A
+   binding_mode        #282828 #eed49f #BF616A
+  }
+}
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode

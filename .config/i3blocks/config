@@ -44,16 +44,16 @@ border_left=0
 
 [volume]
 # For the pulseaudio users
-command=pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1 
+# command=pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1 
+command=~/.config/i3blocks/scripts/volume.sh
 # command=awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master)
 interval=1
-label=<span color="#91d7e3">  </span>
+# label=<span color="#91d7e3">  </span>
 border=#91d7e3
 border_top=2
 border_right=0
 border_bottom=0
 border_left=0
-click_right=pamixer --toggle-mute
 
 [time_est]
 command=TZ=":Europe/Berlin" date '+%H : %M %Z' | awk '{ printf "%s<span color=\"#eed49f\">%s</span>%s<span color=\"#eed49f\"> %s</span>\n", $1, $2, $3, $4 }'
@@ -66,7 +66,7 @@ border_bottom=0
 border_left=0
 
 [date]
-command=LC_ALL="en_us.UTF-8" date '+%Y %B %d %A ' | awk '{ printf "%s <span color=\"#ed8796\">%s %s</span> %s <span color=\"#ed8796\">%s%s</span>\n", $1, $2, $3, $4, $5, $6 }'
+command=LC_ALL="de_DE.UTF-8" date '+%Y %B %d %A ' | awk '{ printf "%s <span color=\"#ed8796\">%s %s</span> %s <span color=\"#ed8796\">%s%s</span>\n", $1, $2, $3, $4, $5, $6 }'
 interval=60
 label=<span color="#ed8796">  </span>
 border=#ed8796
@@ -74,4 +74,3 @@ border_top=2
 border_right=0
 border_bottom=0
 border_left=0
-

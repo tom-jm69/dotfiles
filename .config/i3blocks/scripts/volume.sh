@@ -5,16 +5,19 @@ is_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -q "yes" && echo "true" || 
 
 # Get the current volume percentage
 volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1)
-
 # Display the appropriate icon based on the mute status with the specified color
 if [ "$is_muted" == "true" ]; then
     icon="<span color=\"#91d7e3\"> </span>"  # Muted icon
+elif [ "$volume" -gt 100 ]; then
+    icon="<span color=\"#ff0f0f\"> </span>"  # Muted icon
+    volume="<span color=\"#ff0f0f\">$volume%</span>"  # Muted icon
+
 else
     icon="<span color=\"#91d7e3\"> </span>"  # Unmuted icon
 fi
 
 # Output the icon and volume
-echo "$icon $volume%"
+echo "$icon $volume"
 
 # Handle click actions
 case $BLOCK_BUTTON in

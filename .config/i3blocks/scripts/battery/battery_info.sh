@@ -1,6 +1,10 @@
 #!/bin/sh
 
 # If ACPI was not installed, this probably is a battery-less computer.
+if ! [ -d "/sys/class/power_supply/BAT0" ]; then # check if battery exists
+  exit 0
+fi
+
 ACPI_RES=$(acpi -b)
 ACPI_CODE=$?
 if [ $ACPI_CODE -eq 0 ]

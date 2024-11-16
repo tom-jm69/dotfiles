@@ -14,10 +14,10 @@ ip_address=$(ip addr show "$INTERFACE" | grep 'inet ' | awk '{print $2}' | cut -
 
 if [ -n "$ip_address" ]; then
     # If connected, display IP address
-    echo "<span color=\"#91d7e3\"></span>"
+    echo "<span color=\"#91d7e3\">  </span>"
 else
     # If not connected, display disconnected status
-    echo "<span color=\"#91d7e3\">󰌙</span> Disconnected"
+    echo "<span color=\"#91d7e3\"> 󰌙 </span> Disconnected"
 fi
 if [ "$BLOCK_BUTTON" == "1" ]; then
     # Display the alternate format

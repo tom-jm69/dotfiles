@@ -25,7 +25,7 @@ border_left=0
 command=iwgetid -r | tr '\n' ' ' && grep $(iwgetid -m | awk '{ printf "%s", $1 }') /proc/net/wireless | awk '{ printf "%i%\n", int($3 * 100 / 70) }'
 instance=wlan0
 interval=5
-label=<span color="#f5a97f"> </span>
+label=<span color="#f5a97f">  </span>
 border=#f5a97f
 border_top=2
 border_right=0
@@ -34,7 +34,7 @@ border_left=0
 
 
 [ethernet]
-command=~/.config/i3blocks/scripts/ethernet.sh
+command=~/.config/i3blocks/scripts/network/ethernet.sh
 instance=eth0  # Change this if your Ethernet interface has a different name
 interval=5
 # label=<span color="#91d7e3"> </span>
@@ -45,9 +45,10 @@ border_bottom=0
 border_left=0
 
 [arch_update]
-command=apt list --installed 2>/dev/null | wc -l
-interval=once
-label=<span color="#a6da95">  </span>
+# command=apt list --installed 2>/dev/null | wc -l
+command=~/.config/i3blocks/scripts/packages/os-package-manager.sh
+interval=1
+# label=<span color="#a6da95">  </span>
 border=#a6da95
 border_top=2
 border_right=0
@@ -57,7 +58,7 @@ border_left=0
 [volume]
 # For the pulseaudio users
 # command=pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1 
-command=~/.config/i3blocks/scripts/volume.sh
+command=~/.config/i3blocks/scripts/audio/volume.sh
 # command=awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master)
 interval=1
 # label=<span color="#91d7e3">  </span>
@@ -79,7 +80,7 @@ border_left=0
 
 [date]
 # command=LC_ALL="de_DE.UTF-8" date '+%Y %B %d %A ' | awk '{ printf "%s <span color=\"#ed8796\">%s %s</span> %s <span color=\"#ed8796\">%s%s</span>\n", $1, $2, $3, $4, $5, $6 }'
-command=~/.config/i3blocks/scripts/date.sh
+command=~/.config/i3blocks/scripts/date/date.sh
 interval=1
 label=<span color="#ed8796">  </span>
 border=#ed8796

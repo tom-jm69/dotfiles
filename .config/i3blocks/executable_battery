@@ -1,5 +1,10 @@
 #!/bin/bash
 
+BATTERY=$(cat "/sys/class/power_supply/BAT0")
+
+if [ -z "$BATTERY" ]; then
+  echo ""
+fi
 # Right click - perform a full chargemute
 if [[ "${BLOCK_BUTTON}" -eq 3 ]]; then
   sudo tlp fullcharge > /dev/null

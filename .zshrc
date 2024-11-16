@@ -13,6 +13,7 @@ export MODULAR_HOME="$HOME/.modular"
 export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
 export MODULAR_HOME="/home/tom/.modular"
 export PATH="/home/tom/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+export PATH=$PATH:$HOME/.config/i3/scripts/sound
 export GOPATH=$HOME/go
 export SUDO_EDITOR="nvim"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true

@@ -20,6 +20,7 @@ exec_always --no-startup-id feh --bg-scale ~/.config/i3/assets/low-poly-grid-hai
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/milkyway.jpg
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/wp3169604-earth-nasa-wallpaper.jpg
 exec_always --no-startup-id sh -c "killall nm-applet; nm-applet"
+exec_always --no-startup-id sh -c "killall dunst; dunst -conf ~/.config/dunst/dunst-controls"
 
 # nvidia
 exec ~/.config/i3/scripts/nvidia-settings.sh
@@ -42,7 +43,6 @@ set $base_path /home/tom/.config/i3
 exec --no-start
 #exec --no-startup-id feh --bg-scale $base_path/assets/wallpaper.png
 exec killall -q notifier
-exec_always --no-startup-id sh -c "killall dunst; dunst"
 exec --no-startup-id xset r rate 250 80
 #set background image
 # Make alacritty with class lockscreen open in fullscreen
@@ -72,15 +72,26 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+#bindsym XF86AudioPlay exec playerctl play-pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous
+#bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+#bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control volume_up
+bindsym XF86AudioLowerVolume exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control volume_down
+bindsym XF86AudioMute exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control volume_mute
+bindsym XF86MonBrightnessUp exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control brightness_up
+bindsym XF86MonBrightnessDown exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control brightness_down
+bindsym XF86AudioPlayPause exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control play_pause
+bindsym XF86AudioPause exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control play_pause
+bindsym XF86AudioPlay exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control play_pause
+bindsym XF86AudioNext exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control next_track
+bindsym XF86AudioPrev exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control prev_track
 # backlight
 
 # use these keys for focus, movement, and resize directions when reaching for
@@ -97,7 +108,7 @@ bindsym Mod1+Return exec alacritty
 
 # kill focused window
 bindsym Mod1+x exec python3 ~/.config/i3/scripts/monitor-switcher.py
-bindsym Mod1+w kill
+bindsym Mod1+w exec ~/.config/i3/scripts/dont-kill-steam.sh
 
 # start dmenu (a program launcher)
 #bindsym Mod1+d exec --no-startup-id dmenu_run -fn 20

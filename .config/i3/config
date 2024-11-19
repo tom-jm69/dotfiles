@@ -20,7 +20,7 @@ exec_always --no-startup-id feh --bg-scale ~/.config/i3/assets/low-poly-grid-hai
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/milkyway.jpg
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/wp3169604-earth-nasa-wallpaper.jpg
 exec_always --no-startup-id sh -c "killall nm-applet; nm-applet"
-exec_always --no-startup-id sh -c "killall dunst; dunst -conf ~/.config/dunst/dunst-controls"
+exec_always --no-startup-id sh -c "killall dunst; dunst"
 
 # nvidia
 exec ~/.config/i3/scripts/nvidia-settings.sh
@@ -82,16 +82,16 @@ set $refresh_i3status killall -SIGUSR1 i3status
 #bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 #bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control volume_up
-bindsym XF86AudioLowerVolume exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control volume_down
-bindsym XF86AudioMute exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control volume_mute
-bindsym XF86MonBrightnessUp exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control brightness_up
-bindsym XF86MonBrightnessDown exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control brightness_down
-bindsym XF86AudioPlayPause exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control play_pause
-bindsym XF86AudioPause exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control play_pause
-bindsym XF86AudioPlay exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control play_pause
-bindsym XF86AudioNext exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control next_track
-bindsym XF86AudioPrev exec --no-startup-id /home/tom/.config/i3/scripts/sound/media-control prev_track
+bindsym XF86AudioRaiseVolume exec --no-startup-id /home/tom/.config/dunst/scripts/media-control volume_up
+bindsym XF86AudioLowerVolume exec --no-startup-id /home/tom/.config/dunst/scripts/media-control volume_down
+bindsym XF86AudioMute exec --no-startup-id /home/tom/.config/dunst/scripts/media-control volume_mute
+bindsym XF86MonBrightnessUp exec --no-startup-id /home/tom/.config/dunst/scripts/media-control brightness_up
+bindsym XF86MonBrightnessDown exec --no-startup-id /home/tom/.config/dunst/scripts/media-control brightness_down
+bindsym XF86AudioPlayPause exec --no-startup-id /home/tom/.config/dunst/scripts/media-control play_pause
+bindsym XF86AudioPause exec --no-startup-id /home/tom/.config/dunst/scripts/media-control play_pause
+bindsym XF86AudioPlay exec --no-startup-id /home/tom/.config/dunst/scripts/media-control play_pause
+bindsym XF86AudioNext exec --no-startup-id /home/tom/.config/dunst/scripts/media-control next_track
+bindsym XF86AudioPrev exec --no-startup-id /home/tom/.config/dunst/scripts/media-control prev_track
 # backlight
 
 # use these keys for focus, movement, and resize directions when reaching for

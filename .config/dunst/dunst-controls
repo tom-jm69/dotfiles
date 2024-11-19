@@ -1,5 +1,6 @@
 [global]
     font = Noto Sans Regular 12
+    script = ~/.config/i3/notification_click.sh
     allow_markup = yes
     markup = yes
     format = "<span foreground='#5bb1b4'><b>%s</b></span>\n%b"
@@ -32,11 +33,15 @@
     progress_bar_frame_width = 1
     progress_bar_corner_radius = 5
     scale = 1
-    min_icon_size = 64
+    min_icon_size = 16
     max_icon_size = 64
     alignment = center
     vertical_alignment = center
     #offset = 12x67
+
+[slack]
+    appname="slack"
+    icon=/usr/share/pixmaps/slack.png
 
 [shortcuts]
     close = ctrl+space

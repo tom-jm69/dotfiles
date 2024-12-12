@@ -19,8 +19,10 @@ exec_always --no-startup-id xset r rate 250 80
 exec_always --no-startup-id feh --bg-scale ~/.config/i3/assets/low-poly-grid-haikei.png
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/milkyway.jpg
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/wp3169604-earth-nasa-wallpaper.jpg
+exec_always killall -q notifier
 exec_always --no-startup-id sh -c "killall nm-applet; nm-applet"
 exec_always --no-startup-id sh -c "killall dunst; dunst"
+exec killall -q notifier
 
 # nvidia
 exec ~/.config/i3/scripts/nvidia-settings.sh
@@ -64,7 +66,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --pass-media-keys
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -239,9 +241,9 @@ bindsym $mod+Shift+e exec --no-startup-id ~/.config/rofi/powermenu/type-4/powerm
 bar {
   i3bar_command i3bar
   position top 
-  # tray_output primary
+  tray_output primary
   tray_padding 5
-  font pango:JetBrainsMono Nerd Font 13
+  font pango:JetBrainsMono Nerd Font 15
   strip_workspace_numbers no
   padding 0px 5px 0px 0px 
 
@@ -286,12 +288,12 @@ bindsym Mod1+r mode "resize"
 # clipboard
 exec_always --no-startup-id autocutsel
 exec_always --no-startup-id autocutsel -s PRIMARY
-exec_always --no-startup-id clipmenud -u
-bindsym Mod1+c exec --no-startup-id clipmenu
+exec_always --no-startup-id clipmenud -u 
+bindsym Mod1+c exec --no-startup-id clipmenu -fn "Source FiraCode Nerd Font Bolt 11"
 
-exec --no-startup-id xautolock -time 5 -locker 'i3lock -c 000000 -i ~/Pictures/mickey_wallpaper.png'
+exec --no-startup-id xautolock -time 1 -locker 'i3lock -c 000000 -i ~/Pictures/layered-steps-haikei.png' -detectsleep
 
 ## Clipboard Screenshots
 bindsym Print exec flameshot full
 bindsym Ctrl+Print exec flameshot gui -p ~/Pictures/Screenshots -c
-bindsym Mod4+l exec i3lock -t -f -b -c 000000
+bindsym Mod4+l exec i3lock -t -f -b -c 000000 --pass-media-keys

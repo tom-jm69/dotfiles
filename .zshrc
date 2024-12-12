@@ -13,11 +13,12 @@ export MODULAR_HOME="$HOME/.modular"
 export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
 export MODULAR_HOME="/home/tom/.modular"
 export PATH="/home/tom/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
-export PATH=$PATH:$HOME/.config/i3/scripts/sound
 export GOPATH=$HOME/go
 export SUDO_EDITOR="nvim"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf
+export PATH=$PATH:/opt/nvim-linux64/bin
+export PATH=$PATH:$HOME/.config/dunst/scripts
 #export XDG_CURRENT_DESKTOP='ubuntu:GNOME'
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -176,3 +177,18 @@ alias pw='~/.config/i3/scripts/create_pass_entry.sh'
 #eval "$(starship init zsh)"
 #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="--extended"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!{.git,node_modules}/*"'
+export FZF_CTRL_R_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_COMMAND='rg --files --hidden --glob "!{.git,node_modules}/*"'
+export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --border
+    --margin=1 --padding=1 --multi --preview '[[ -f {} ]] && bat --color=always {}' --no-mouse \
+    --color=fg:-1,bg:-1,hl:#b6d5f5 \
+    --color=fg+:#ffffff,bg+:#0a0909,hl+:#99d94c \
+    --color=info:#e3ba62,prompt:#b6d5f5,pointer:#ff0000 \
+    --color=marker:#ffffff,spinner:#ffe100,header:#ffe100 \
+    --border=double
+      "
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

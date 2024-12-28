@@ -30,6 +30,9 @@ exec ~/.config/i3/scripts/nvidia-settings.sh
 # exec_always --no-startup-id ~/.config/i3/scripts/polybar.sh
 exec_always --no-startup-id ~/.config/i3/scripts/headset-light.sh
 exec_always autorandr --change
+exec /usr/bin/deja-dup --auto | tee -a /home/tom/i3-log.txt
+exec /home/tom/.config/i3/scripts/backup-pkg-list.sh | tee -a /home/tom/i3-log.txt
+
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #333333 #333333 #FFFFFF #333333   #333333
@@ -243,7 +246,7 @@ bar {
   position top 
   tray_output primary
   tray_padding 5
-  font pango:JetBrainsMono Nerd Font 15
+  font pango:JetBrainsMono Nerd Font 11
   strip_workspace_numbers no
   padding 0px 5px 0px 0px 
 
@@ -292,6 +295,7 @@ exec_always --no-startup-id clipmenud -u
 bindsym Mod1+c exec --no-startup-id clipmenu -fn "Source FiraCode Nerd Font Bolt 11"
 
 exec --no-startup-id xautolock -time 1 -locker 'i3lock -c 000000 -i ~/Pictures/layered-steps-haikei.png' -detectsleep
+exec xautolock -time 1 -locker -secure 'i3lock -c 000000; xset dpms force off' -detectsleep -notify 30 -notifier 'notify-send "Locking soon..."'
 
 ## Clipboard Screenshots
 bindsym Print exec flameshot full

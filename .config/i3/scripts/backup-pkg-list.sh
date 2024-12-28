@@ -2,9 +2,9 @@
 
 
 # Get currently installed packages via pacman
-PACKAGELIST_PACMAN=$(sudo pacman -Q)
+PACKAGELIST_PACMAN=$(pacman -Q)
 PACKAGE_FILE_PACMAN_NAME="pacman-pkgs.txt"
-PACKAGELIST_FOREIGN=$(sudo pacman -Qm)
+PACKAGELIST_FOREIGN=$(pacman -Qm)
 PACKAGE_FILE_FOREIGN_NAME="foreign-pkgs.txt"
 
 # Get currently installed packages via yay
@@ -18,9 +18,9 @@ mkdir -p "$PACKAGE_FILE_DIRECTORY"
 
 # Create file and dump
 echo "Dumping pacman package list..."
-echo "$PACKAGELIST_PACMAN" >> "$PACKAGE_FILE_DIRECTORY/$PACKAGE_FILE_PACMAN_NAME"
+echo "$PACKAGELIST_PACMAN" > "$PACKAGE_FILE_DIRECTORY/$PACKAGE_FILE_PACMAN_NAME"
 echo "Dumping foreign package list..."
-echo "$PACKAGELIST_FOREIGN" >> "$PACKAGE_FILE_DIRECTORY/$PACKAGE_FILE_FOREIGN_NAME"
+echo "$PACKAGELIST_FOREIGN" > "$PACKAGE_FILE_DIRECTORY/$PACKAGE_FILE_FOREIGN_NAME"
 
 # Changing owner to none root
 echo "Changing owner and group to tom..."

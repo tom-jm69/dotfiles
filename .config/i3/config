@@ -294,8 +294,8 @@ exec_always --no-startup-id autocutsel -s PRIMARY
 exec_always --no-startup-id clipmenud -u 
 bindsym Mod1+c exec --no-startup-id clipmenu -fn "Source FiraCode Nerd Font Bolt 11"
 
-exec --no-startup-id xautolock -time 1 -locker 'i3lock -c 000000 -i ~/Pictures/layered-steps-haikei.png' -detectsleep
-exec xautolock -time 1 -locker -secure 'i3lock -c 000000; xset dpms force off' -detectsleep -notify 30 -notifier 'notify-send "Locking soon..."'
+#exec --no-startup-id xautolock -time 1 -locker 'i3lock -c 000000 -i ~/Pictures/layered-steps-haikei.png' -detectsleep
+exec --no-startup-id xautolock -time 1 -secure -locker 'i3lock -c 000000; xset dpms force off' -detectsleep -notify 30 -notifier 'notify-send "Locking soon..."'
 
 ## Clipboard Screenshots
 bindsym Print exec flameshot full

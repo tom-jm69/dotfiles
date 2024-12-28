@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 #zmodload zsh/zprof debug timing
 export ZSH="$HOME/.oh-my-zsh"
+export VISUAL="nvim"
 export TERM=xterm-256color
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH=$PATH:/usr/local/go/bin
@@ -19,6 +20,10 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf
 export PATH=$PATH:/opt/nvim-linux64/bin
 export PATH=$PATH:$HOME/.config/dunst/scripts
+export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 #export XDG_CURRENT_DESKTOP='ubuntu:GNOME'
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -189,6 +194,3 @@ export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --border
     --color=marker:#ffffff,spinner:#ffe100,header:#ffe100 \
     --border=double
       "
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"

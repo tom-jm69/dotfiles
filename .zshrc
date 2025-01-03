@@ -1,7 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-#zmodload zsh/zprof debug timing
+
+# Set environment
 export ZSH="$HOME/.oh-my-zsh"
 export VISUAL="nvim"
+export EDITOR="nvim"
 export TERM=xterm-256color
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH=$PATH:/usr/local/go/bin
@@ -24,10 +26,22 @@ export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-#export XDG_CURRENT_DESKTOP='ubuntu:GNOME'
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
+
+
+# Support colors in less
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 1)
+export LESS_TERMCAP_md=$(tput bold; tput setaf 1)
+export LESS_TERMCAP_me=$(tput sgr0)
+export LESS_TERMCAP_se=$(tput sgr0)
+export LESS_TERMCAP_so=$(tput bold; tput setaf 3; tput setab 4)
+export LESS_TERMCAP_ue=$(tput sgr0)
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 2)
+export LESS_TERMCAP_mr=$(tput rev)
+export LESS_TERMCAP_mh=$(tput dim)
+export LESS_TERMCAP_ZN=$(tput ssubm)
+export LESS_TERMCAP_ZV=$(tput rsubm)
+export LESS_TERMCAP_ZO=$(tput ssupm)
+export LESS_TERMCAP_ZW=$(tput rsupm)
 
 ZSH_THEME="robbyrussell"
 # Created by Zap installer
@@ -174,6 +188,14 @@ rm() {
   else
     echo "Aborted!"
   fi
+}
+# Print all 256 colors
+colors() {
+	local i
+	for i in {0..255}; do
+		printf "\x1b[38;5;${i}mcolor %d\n" "$i"
+	done
+	tput sgr0
 }
 alias p='pass fzf'
 alias pws='pass fzf -s'

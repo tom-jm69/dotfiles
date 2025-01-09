@@ -63,6 +63,9 @@ return {
 			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.tailwindcss.setup({
+				capabilities = capabilities,
+			})
 			lspconfig.ltex.setup({
 				capabilities = capabilities,
         filetypes = { "plaintex", "rst", "rnoweb", "tex", "text", "txt" },

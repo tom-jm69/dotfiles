@@ -82,7 +82,7 @@ alias r='fc -s'
 alias act='source env/bin/activate'
 
 
-source .sources/*
+source ~/.sources/*
 
 #zprof debug timing
 #eval "$(starship init zsh)"

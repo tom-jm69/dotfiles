@@ -91,7 +91,7 @@ vim.api.nvim_set_keymap("n", "<leader>d", ":AnsibleDocFloat<CR>", { silent = tru
 vim.api.nvim_set_keymap("n", "<leader>v", ":AnsibleDocVSplit<CR>", { silent = true })
 
 -- save as root
-vim.api.nvim_set_keymap('c', "w!!", '<cmd>SudoSaveFile<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>w", ":SudoSaveFile<CR>", { noremap = true, silent = true })
 
 
 -- trim_whitespace

@@ -8,7 +8,6 @@
 # Usage          : ./sshs.sh [-a] [-h] [HOST_NAME]
 #
 
-
 display_help() {
     echo "Simplifies SSH host selection and connection"
     echo "This script uses 'fzf' for interactive host selection"
@@ -45,6 +44,7 @@ display_config_and_ssh() {
         BEGIN { RS="\n\n" }
     $0 ~ pattern { print $0 "\n" }'
     ssh "$1"
+    tput rmcup
     exit 0
 }
 
@@ -90,6 +90,7 @@ select_host "$1"
 # Extract only the Host name (without parentheses) for SSH connection
 if [ -n "$selected_host" ]; then
     # Remove everything after the first space (to remove the HostName in parentheses)
+    tput smcup
     clean_host=$(echo "$selected_host" | awk '{print $1}')
     display_config_and_ssh "$clean_host"
 else

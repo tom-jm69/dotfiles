@@ -111,6 +111,9 @@ set $right l
 # start a terminal
 bindsym Mod1+Return exec alacritty
 
+# start thunar
+bindsym Mod1+e exec thunar
+
 # kill focused window
 bindsym Mod1+x exec python3 ~/.config/i3/scripts/monitor-switcher.py
 bindsym Mod1+w exec ~/.config/i3/scripts/dont-kill-steam.sh
@@ -159,9 +162,6 @@ bindsym Mod1+v split v
 
 # enter fullscreen mode for the focused container
 bindsym Mod1+f fullscreen toggle
-
-
-
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym Mod1+s layout stacking

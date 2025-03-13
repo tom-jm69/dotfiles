@@ -1,0 +1,52 @@
+# wallpaper
+exec_always --no-startup-id feh --bg-scale ~/.config/i3/assets/Arch.jpg
+
+# sonic keyboard (xorg-xrandr)
+exec_always --no-startup-id xset r rate 250 80
+
+# network manager applet
+exec_always --no-startup-id sh -c "killall nm-applet; nm-applet"
+
+# picom 
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf --vsync
+
+# notifications (dunst)
+exec killall -q notifier
+exec_always --no-startup-id sh -c "killall dunst; dunst"
+
+# clipboard
+exec_always --no-startup-id clipmenud -u 
+exec_always --no-startup-id autocutsel
+exec_always --no-startup-id autocutsel -s PRIMARY
+
+# lockscreen (i3lock-color)
+exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 600 '~/.config/i3/scripts/lock/asciiquarium.sh' ''
+exec --no-startup-id xset dpms 900
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --pass-media-keys
+
+# Hide mouse after two seconds (unclutter)
+exec unclutter --timeout 1
+
+# Thunderbird autostart
+exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/thunderbird'
+
+# Teams autostart
+exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/librewolf teams.microsoft.com'
+
+# gnome dark theme
+exec gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+
+# backup package list (deja-dup)
+exec /home/tom/.config/i3/scripts/backup-pkg-list.sh | tee -a /home/tom/i3-log.txt
+exec /usr/bin/deja-dup --auto | tee -a /home/tom/i3-log.txt
+
+# monitor
+exec_always autorandr --change
+exec ~/.config/i3/scripts/nvidia-settings.sh
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3

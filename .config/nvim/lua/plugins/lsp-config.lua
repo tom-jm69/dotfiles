@@ -19,7 +19,6 @@ return {
 				"terraformls",
 				"yamlls",
 				"pyright",
-        "ruff_lsp",
 				"docker_compose_language_service",
 				"dockerls",
 				"marksman",
@@ -94,6 +93,7 @@ return {
 							["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] = "*api*.{yml,yaml}",
 							["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.{yml,yaml}",
 						},
+
 					},
 				},
 			})

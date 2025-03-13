@@ -17,16 +17,15 @@ return {
 				dist = { "yamllint" },
 				ansible = { "ansible_lint" },
 				terraform = { "tfsec", "tflint" },
-				python = { "pylint" , "pydocstyle" },
+				python = { "pylint", "pydocstyle" },
 				markdown = { "markdownlint" },
-        hclfmt = { "tfsec", "tflint" },
+				hclfmt = { "tfsec", "tflint" },
 			}
-
 
 			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
 			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-        pattern = { "*.hcl", "*.tf", "*.py", "*.sh", "*.yaml", "*.yml", "*.go", "*.md", "*.lua" , "*yaml.dist"},
+				pattern = { "*.hcl", "*.tf", "*.py", "*.sh", "*.yaml", "*.yml", "*.go", "*.md", "*.lua", "*yaml.dist" },
 				group = lint_augroup,
 				callback = function()
 					lint.try_lint()

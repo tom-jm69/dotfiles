@@ -18,11 +18,11 @@ return {
 					terraform = { "terraform_fmt" },
 					yaml = { "yamlfmt", "prettier" },
 					-- python = { "isort", "black" },
-					python = { "isort", "black", "ruff_fix", "ruff_organize_imports" , "pylint" },
+					python = { "isort", "black", "ruff_fix", "ruff_organize_imports", "pylint" },
 					go = { "goimports", "gofmt" },
-          hcl = { "hclfmt" },
-          sql = { "sql-formatter" },
-          rust = { "rustfmt", lsp_format = "fallback" },
+					hcl = { "hclfmt" },
+					sql = { "sql-formatter" },
+					rust = { "rustfmt", lsp_format = "fallback" },
 				},
 			})
 

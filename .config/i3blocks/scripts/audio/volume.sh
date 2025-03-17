@@ -8,9 +8,9 @@ volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1)
 
 # Display the appropriate icon based on the mute status with the specified color
 if [ "$is_muted" == "true" ]; then
-    icon="<span color=\"#91d7e3\"> </span>"  # Muted icon
+    icon="<span color=\"#91d7e3\">  </span>"  # Muted icon
 else
-    icon="<span color=\"#91d7e3\"> </span>"  # Unmuted icon
+    icon="<span color=\"#91d7e3\">  </span>"  # Unmuted icon
 fi
 
 # Output the icon and volume

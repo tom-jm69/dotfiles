@@ -14,7 +14,7 @@ set $sup Mod4
 
 set $base_path /home/tom/.config/i3
 
-include ~/.config/i3/config.d/*
+include ~/.config/i3/config.d/*.conf
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #333333 #333333 #FFFFFF #333333   #333333

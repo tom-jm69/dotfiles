@@ -26,7 +26,7 @@ border_left=0
 command=iwgetid -r | tr '\n' ' ' && grep $(iwgetid -m | awk '{ printf "%s", $1 }') /proc/net/wireless | awk '{ printf "%i%\n", int($3 * 100 / 70) }'
 instance=wlan0
 interval=5
-label=<span color="#f5a97f">  </span>
+label=<span color="#f5a97f">   </span>
 border=#f5a97f
 border_top=2
 border_right=0

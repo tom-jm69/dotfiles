@@ -8,7 +8,7 @@
 
 align=center
 separator=false
-color=#cad3f5
+color=#ffffff
 separator_block_width=15
 markup=pango
 
@@ -45,7 +45,6 @@ border_bottom=0
 border_left=0
 
 [arch_update]
-# command=apt list --installed 2>/dev/null | wc -l
 command=~/.config/i3blocks/scripts/packages/os-package-manager.sh
 interval=1
 # label=<span color="#a6da95">  </span>
@@ -59,9 +58,7 @@ border_left=0
 # For the pulseaudio users
 # command=pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1 
 command=~/.config/i3blocks/scripts/audio/volume.sh
-# command=awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master)
 interval=1
-# label=<span color="#91d7e3">  </span>
 border=#91d7e3
 border_top=2
 border_right=0
@@ -71,7 +68,7 @@ border_left=0
 [time_est]
 command=TZ=":Europe/Berlin" date '+%H : %M %Z' | awk '{ printf "%s<span color=\"#eed49f\">%s</span>%s<span color=\"#eed49f\"> %s</span>\n", $1, $2, $3, $4 }'
 interval=1
-label=<span color="#eed49f">  </span>
+label=<span color="#eed49f"> </span>
 border=#eed49f
 border_top=2
 border_right=0
@@ -79,10 +76,9 @@ border_bottom=0
 border_left=0
 
 [date]
-# command=LC_ALL="de_DE.UTF-8" date '+%Y %B %d %A ' | awk '{ printf "%s <span color=\"#ed8796\">%s %s</span> %s <span color=\"#ed8796\">%s%s</span>\n", $1, $2, $3, $4, $5, $6 }'
 command=~/.config/i3blocks/scripts/date/date.sh
 interval=1
-label=<span color="#ed8796">  </span>
+label=<span color="#ed8796"> </span>
 border=#ed8796
 border_top=2
 border_right=0

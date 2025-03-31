@@ -42,7 +42,7 @@ then
             echo "#FA1E44"
         else
             # Battery not charging but at decent level. Green color.
-            echo "#007872"
+            echo "#ffffff"
         fi
     fi
 fi

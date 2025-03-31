@@ -13,7 +13,7 @@ set $mod Mod1
 set $sup Mod4
 set $base_path /home/tom/.config/i3
 
-include ~/.config/i3/config.d/*
+include ~/.config/i3/config.d/*.conf
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #333333 #333333 #FFFFFF #333333   #333333
@@ -26,4 +26,4 @@ client.placeholder      #333333 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Source FiraCode Nerd Font Bolt 11
+font pango:Source FiraCode Nerd Font Bolt 16

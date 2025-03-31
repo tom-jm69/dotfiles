@@ -16,6 +16,7 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf
 export PATH=$PATH:/opt/nvim-linux64/bin
 export PATH=$PATH:$HOME/.config/dunst/scripts
 export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
+export GTK_THEME=Adwaita:dark
 
 # go
 export GOPATH=$HOME/go

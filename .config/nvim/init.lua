@@ -19,3 +19,4 @@ require("utils")
 require("vim-options")
 vim.api.nvim_set_option("clipboard","unnamed")
 vim.opt.clipboard = "unnamedplus"
+require('transparent').clear_prefix('NeoTree')

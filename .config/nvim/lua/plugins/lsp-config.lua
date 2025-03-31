@@ -19,7 +19,6 @@ return {
 				"terraformls",
 				"yamlls",
 				"pyright",
-        "ruff_lsp",
 				"docker_compose_language_service",
 				"dockerls",
 				"marksman",

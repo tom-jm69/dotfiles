@@ -1,6 +1,6 @@
 [global]
 
-    font = JetBrainsMono Nerd Font 10
+    font = JetBrainsMono Nerd Font 20
     allow_markup = yes
     markup = yes
     format = "<span foreground='#5bb1b4'><b>%s</b></span>\n%b"

@@ -1,6 +1,6 @@
 [global]
 
-    font = JetBrainsMono Nerd Font 20
+    font = JetBrainsMono Nerd Font 18
     allow_markup = yes
     markup = yes
     format = "<span foreground='#5bb1b4'><b>%s</b></span>\n%b"
@@ -26,14 +26,14 @@
     corner_radius = 15
     frame_color = "#3c4549"
     frame_width = 1
-    width = 400
+    width = 600
     progress_bar_max_width = 400
     progress_bar_min_width = 400
     progress_bar_height = 10
     progress_bar_frame_width = 1
     progress_bar_corner_radius = 5
     scale = 1
-    min_icon_size = 16
+    min_icon_size = 32
     max_icon_size = 64
     alignment = center
     vertical_alignment = center

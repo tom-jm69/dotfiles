@@ -20,3 +20,16 @@ require("vim-options")
 vim.api.nvim_set_option("clipboard","unnamed")
 vim.opt.clipboard = "unnamedplus"
 require('transparent').clear_prefix('NeoTree')
+
+vim.g.clipboard = {
+  name = "wl-clipboard",
+  copy = {
+    ["+"] = "wl-copy",
+    ["*"] = "wl-copy",
+  },
+  paste = {
+    ["+"] = "wl-paste --no-newline",
+    ["*"] = "wl-paste --no-newline",
+  },
+  cache_enabled = true,
+}

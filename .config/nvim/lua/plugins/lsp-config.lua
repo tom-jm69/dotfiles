@@ -22,25 +22,55 @@ return {
 				"docker_compose_language_service",
 				"dockerls",
 				"marksman",
-        "cssls",
-        "terraformls",
-        "ruff", -- python
 			},
 		},
 	},
 	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		config = function()
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					-- linter
+					"ansible-lint", -- ansible
+					"hadolint", -- dockerfile
+					"mypy", -- python
+					"ruff", -- python
+					"selene", -- lua
+					"shellcheck", -- bash
+					"shellharden", -- bash
+					"tflint", -- terraform
+					"tfsec", -- terraform
+					"trivy", -- a lot
+					"stylua", -- lua
+					"yamllint", -- yaml
+					-- formatter
+					"beautysh", -- bash
+					"shfmt", -- bash
+					"latexindent", -- latex
+					"prettier", -- yaml,json
+					"ruff", -- python
+					"black", -- python
+					"shellharden", -- bash
+					"stylua", -- lua
+					"yamlfmt", -- yaml
+					-- # dap
+					"bash-debug-adapter", -- bash
+				},
+			})
+		end,
+	},
+	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
+		dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+			{ "antosha417/nvim-lsp-file-operations", config = true },
+			{ "folke/neodev.nvim", opts = {} },
+		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
---			lspconfig.tsserver.setup({
---				capabilites = capabilities,
---			})
-			lspconfig.cssls.setup({
-				capabilites = capabilities,
-			})
 			lspconfig.html.setup({
 				capabilites = capabilities,
 			})
@@ -58,22 +88,6 @@ return {
 			})
 			lspconfig.terraformls.setup({
 				capabilities = capabilities,
-			})
-			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.tailwindcss.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.ltex.setup({
-				capabilities = capabilities,
-        filetypes = { "plaintex", "rst", "rnoweb", "tex", "text", "txt" },
-        settings = {
-          ltex = {
-            language = "de-DE",
-            enabled = { "plaintex", "rst", "rnoweb", "tex", "text", "txt" },
-          },
-        },
 			})
 			lspconfig.yamlls.setup({
 				capabilities = capabilities,
@@ -98,7 +112,11 @@ return {
 			})
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
-        -- filetypes = { "python" },
+				filetypes = { "python" },
+			})
+			lspconfig.ruff.setup({
+				capabilities = capabilities,
+				filetypes = { "python" },
 			})
 			lspconfig.docker_compose_language_service.setup({
 				capabilities = capabilities,
@@ -113,43 +131,98 @@ return {
 
 			-- set keybinds
 			opts.desc = "Show LSP references"
-			vim.keymap.set("n", "gR", "<cmd>FzfLua lsp_references<CR>", opts) -- show definition, references
-
-			opts.desc = "Go to declaration"
-			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
-
-			opts.desc = "Show LSP definitions"
-			vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions<CR>", opts) -- show lsp definitions
-
-			opts.desc = "Show LSP implementations"
-			vim.keymap.set("n", "gi", "<cmd>FzfLua lsp_implementations<CR>", opts) -- show lsp implementations
-
-			opts.desc = "Show LSP type definitions"
-			vim.keymap.set("n", "gt", "<cmd>FzfLua lsp_typedefs<CR>", opts) -- show lsp type definitions
-
-			opts.desc = "See available code actions"
-			vim.keymap.set({"n", "v"}, "ca", "<cmd>FzfLua lsp_code_actions<CR>", opts) -- show  See available code actions
+			vim.keymap.set("n", "<leader>xr", "<cmd>FzfLua lsp_references<CR>", opts) -- show definition, references
 
 			opts.desc = "Smart rename"
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
-			opts.desc = "Show buffer diagnostics"
-			vim.keymap.set("n", "<leader>d", "<cmd>FzfLua diagnostics_document<CR>", opts) -- show  diagnostics for file
+			opts.desc = "Show LSP definitions"
+			vim.keymap.set("n", "<leader>ld", "<cmd>FzfLua lsp_definitions<CR>", opts) -- show lsp definitions
 
-			opts.desc = "Show workspace diagnostics"
-			vim.keymap.set("n", "<leader>D", "<cmd>FzfLua diagnostics_document<CR>", opts) -- show diagnostic for workspace
+			opts.desc = "Go to declaration"
+			vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, opts) -- go to declaration
 
-			opts.desc = "Go to previous diagnostic"
-			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
-
-			opts.desc = "Go to next diagnostic"
-			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+			opts.desc = "See available code actions"
+			vim.keymap.set({ "n", "v" }, "ca", "<cmd>FzfLua lsp_code_actions<CR>", opts) -- show  See available code actions
 
 			opts.desc = "Show documentation for what is under cursor"
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
 			opts.desc = "Restart LSP"
 			vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+			-- not so important
+			opts.desc = "Show LSP implementations"
+			vim.keymap.set("n", "gi", "<cmd>FzfLua lsp_implementations<CR>", opts) -- show lsp implementations
+
+			opts.desc = "Show LSP type definitions"
+			vim.keymap.set("n", "gt", "<cmd>FzfLua lsp_typedefs<CR>", opts) -- show lsp type definitions
 		end,
 	},
+
+	{
+		"folke/trouble.nvim",
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble",
+		keys = {
+			{
+				"<leader>xx",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<leader>xX",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+			{
+				"<leader>cs",
+				"<cmd>Trouble symbols toggle focus=false<cr>",
+				desc = "Symbols (Trouble)",
+			},
+			{
+				"<leader>cl",
+				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+				desc = "LSP Definitions / references / ... (Trouble)",
+			},
+			{
+				"<leader>xL",
+				"<cmd>Trouble loclist toggle<cr>",
+				desc = "Location List (Trouble)",
+			},
+			{
+				"<leader>xQ",
+				"<cmd>Trouble qflist toggle<cr>",
+				desc = "Quickfix List (Trouble)",
+			},
+		},
+	},
+	--	{
+	--		"folke/trouble.nvim",
+	--		dependencies = { "nvim-tree/nvim-web-devicons", "folke/todo-comments.nvim" },
+	--    cmd = "Trouble",
+	--		keys = {
+	--			{ "<leader>xx", "<cmd>TroubleToggle<CR>", desc = "Open/close trouble list" },
+	--			{
+	--				"<leader>xw",
+	--				"<cmd>TroubleToggle workspace_diagnostics<CR>",
+	--				desc = "Open trouble workspace diagnostics",
+	--			},
+	--			{ "<leader>xd", "<cmd>TroubleToggle document_diagnostics<CR>", desc = "Open trouble document diagnostics" },
+	--			{ "<leader>xq", "<cmd>TroubleTogglequickfix<CR>", desc = "Open trouble quickfix list" },
+	--			{ "<leader>xl", "<cmd>TroubleToggle loclist<CR>", desc = "Open trouble location list" },
+	--			{
+	--				"]n",
+	--				"<cmd>lua require('trouble').next({skip_groups = true, jump = true})<CR>",
+	--				desc = "jump",
+	--			},
+	--			{
+	--				"[n",
+	--				"<cmd>lua require('trouble').previous({skip_groups = true, jump = true})<CR>",
+	--				desc = "jump",
+	--			},
+	--
+	--			{ "<leader>xt", "<cmd>TodoTrouble<CR>", desc = "Open todos in trouble" },
+	--		},
+	--	},
 }

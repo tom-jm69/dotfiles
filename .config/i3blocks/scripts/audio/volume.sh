@@ -3,7 +3,7 @@
 # Check if the sink is muted
 is_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -q "yes" && echo "true" || echo "false")
 
-# Get the current volume percentage
+# Get the current volume percentage of the first channel
 volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1)
 
 # Display the appropriate icon based on the mute status with the specified color
@@ -22,8 +22,10 @@ case $BLOCK_BUTTON in
        pactl set-sink-mute @DEFAULT_SINK@ toggle ;;
     3) # Right click - open pavucontrol (if installed)
        pavucontrol ;;
-    4) # Scroll up - increase volume
-       pactl set-sink-volume @DEFAULT_SINK@ +5% ;;
+    4) # Scroll up - increase volume, but clamp to max 100%
+       if [ "$volume" -lt 100 ]; then
+           pactl set-sink-volume @DEFAULT_SINK@ +1%
+       fi ;;
     5) # Scroll down - decrease volume
-       pactl set-sink-volume @DEFAULT_SINK@ -5% ;;
+       pactl set-sink-volume @DEFAULT_SINK@ -1% ;;
 esac

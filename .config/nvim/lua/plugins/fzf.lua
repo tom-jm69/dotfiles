@@ -9,7 +9,7 @@ return {
 		function live_grep_in_selected_directory(selected_directory)
 			require("fzf-lua").live_grep({
 				cwd = selected_directory,
-				cmd = "rg --hidden --line-number --column --color=always --glob '!{.git,node_modules}/*'",
+				cmd = "rg --hidden --line-number --column --color=always",
 			})
 		end
 

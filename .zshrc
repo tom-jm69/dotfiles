@@ -75,15 +75,6 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-alias vim="nvim"
-alias q="exit"
-alias lg="lazygit"
-alias sshs='~/script/search-hosts.sh'
-alias hosts='cat /etc/hosts | tr " " "\n" | fzf'
-alias ls='eza --group-directories-first --icons'
-alias r='fc -s'
-alias act='source env/bin/activate'
-
 
 source ~/.sources/*
 

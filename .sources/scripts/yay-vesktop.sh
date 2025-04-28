@@ -19,6 +19,7 @@ if ! command -v /usr/bin/yay >/dev/null; then
     exit 1
 fi
 
-if yay "$@"; then
+if grep -q "Icon=vesktop" "$vesktop_path"; then
     sudo sed -i 's/Icon=vesktop/Icon=discord/' "$vesktop_path"
 fi
+yay "$@"

@@ -72,7 +72,6 @@ eval "$(zoxide init --cmd cd  zsh)"
 
 bindkey "^R" history-incremental-search-backward
 
-ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh

@@ -14,6 +14,7 @@
 dir="$HOME/.config/rofi/launchers/type-1"
 theme='style-5'
 
+export GTK_THEME=Adwaita:dark
 ## Run
 rofi \
     -show drun \

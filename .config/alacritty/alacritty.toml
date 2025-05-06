@@ -46,8 +46,8 @@ foreground = "#ffffff"
 
 
 [font]
+size = 18
 
-size = 20
 [font.bold]
 family = "FiraCode Nerd Font"
 style = "Bold"

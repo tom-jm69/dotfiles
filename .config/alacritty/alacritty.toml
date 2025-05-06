@@ -1,6 +1,6 @@
 #theme = "Afterglow"
 [window]
-# opacity = 0.8
+opacity = 0.8
 
 [colors.bright]
 black = "#636363"
@@ -44,6 +44,10 @@ bright_foreground = "#d9d9d9"
 dim_foreground = "#dbdbdb"
 foreground = "#ffffff"
 
+
+[font]
+
+size = 20
 [font.bold]
 family = "FiraCode Nerd Font"
 style = "Bold"

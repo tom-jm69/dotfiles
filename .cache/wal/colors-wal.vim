@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/tom/.config/i3/assets/gradient.jpg"
+let background = "#1c2049"
+let foreground = "#c8e2de"
+let cursor     = "#c8e2de"
+
+" Colors
+let color0  = "#1c2049"
+let color1  = "#5AB0C4"
+let color2  = "#65CBC9"
+let color3  = "#A495B3"
+let color4  = "#D99BB2"
+let color5  = "#A7B7C3"
+let color6  = "#D2AEC6"
+let color7  = "#c8e2de"
+let color8  = "#8c9e9b"
+let color9  = "#5AB0C4"
+let color10 = "#65CBC9"
+let color11 = "#A495B3"
+let color12 = "#D99BB2"
+let color13 = "#A7B7C3"
+let color14 = "#D2AEC6"
+let color15 = "#c8e2de"

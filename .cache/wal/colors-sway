@@ -1,0 +1,21 @@
+set $wallpaper /home/tom/.config/i3/assets/gradient.jpg
+
+set $background #1c2049
+set $foreground #c8e2de
+
+set $color0 #1c2049
+set $color1 #5AB0C4
+set $color2 #65CBC9
+set $color3 #A495B3
+set $color4 #D99BB2
+set $color5 #A7B7C3
+set $color6 #D2AEC6
+set $color7 #c8e2de
+set $color8 #8c9e9b
+set $color9 #5AB0C4
+set $color10 #65CBC9
+set $color11 #A495B3
+set $color12 #D99BB2
+set $color13 #A7B7C3
+set $color14 #D2AEC6
+set $color15 #c8e2de

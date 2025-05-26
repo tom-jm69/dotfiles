@@ -18,7 +18,6 @@ return {
 				"tflint",
 				"terraformls",
 				"yamlls",
-				"pyright",
 				"docker_compose_language_service",
 				"dockerls",
 				"marksman",
@@ -109,10 +108,6 @@ return {
 						},
 					},
 				},
-			})
-			lspconfig.pyright.setup({
-				capabilities = capabilities,
-				filetypes = { "python" },
 			})
 			lspconfig.ruff.setup({
 				capabilities = capabilities,

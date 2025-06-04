@@ -20,6 +20,7 @@ export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
 # go
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # cargo/rust
 . "$HOME/.cargo/env"

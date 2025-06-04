@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-INSTALLED=("solaar" "waybar" "wl-clipboard" "cliphist" "gsettings" "dex" "dunst" "alacritty" "flameshot" "wofi" "dmenu" "rofi" "zsh" "adw-gtk-theme" "adw-gtk3" "adwaita-fonts" "alsa-plugins" "ansible" "ansible-core" "binwalk" "bitwarden" "spotify" "docker" "ffmpeg" "firefox" "git")
+INSTALLED=("solaar" "zoxide" "waybar" "whois" "wl-clipboard" "cliphist" "gsettings" "dex" "dunst" "alacritty" "flameshot" "wofi" "dmenu" "rofi" "zsh" "adw-gtk-theme" "adw-gtk3" "adwaita-fonts" "alsa-plugins" "ansible" "ansible-core" "binwalk" "bitwarden" "spotify-launcher" "docker" "ffmpeg" "firefox" "git" "spicetify" "go" "cargo" "rustc")
 
 missing=()
 

@@ -1,5 +1,4 @@
 [global]
-
     font = JetBrainsMono Nerd Font 10
     markup = yes
     format = "<span foreground='#5bb1b4'><b>%s</b></span>\n%b"
@@ -36,19 +35,19 @@
     #offset = 12x67
 
 [urgency_low]
-    background = "#131519"
-    foreground = "#ffffff"
-    highlight = "#5bb1b4"
-    timeout = 5
+  background = "#131519B$"     # 50% transparent
+  foreground = "#ffffff"
+  highlight = "#5bb1b4"
+  timeout = 5
 
 [urgency_normal]
-    background = "#131519"
-    foreground = "#ffffff"
-    highlight = "#5bb1b4"
-    timeout = 20
+  background = "#131519B3"
+  foreground = "#ffffff"
+  highlight = "#5bb1b4"
+  timeout = 20
 
 [urgency_critical]
-    background = "#131519"
-    foreground = "#ffffff"
-    highlight = "#5bb1b4"
-    timeout = 0
+  background = "#131519B3"
+  foreground = "#ffffff"
+  highlight = "#5bb1b4"
+  timeout = 0

@@ -35,19 +35,19 @@
     #offset = 12x67
 
 [urgency_low]
-  background = "#131519B$"     # 50% transparent
+  background = "#131519E6"
   foreground = "#ffffff"
   highlight = "#5bb1b4"
   timeout = 5
 
 [urgency_normal]
-  background = "#131519B3"
+  background = "#131519E6"
   foreground = "#ffffff"
   highlight = "#5bb1b4"
   timeout = 20
 
 [urgency_critical]
-  background = "#131519B3"
+  background = "#131519E6"
   foreground = "#ffffff"
   highlight = "#5bb1b4"
   timeout = 0

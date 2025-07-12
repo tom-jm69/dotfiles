@@ -16,11 +16,11 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf
 export PATH=$PATH:/opt/nvim-linux64/bin
 export PATH=$PATH:$HOME/.config/dunst/scripts
 export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
+export GTK_THEME=Adwaita:dark
 
 # go
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # cargo/rust
 . "$HOME/.cargo/env"
@@ -72,10 +72,18 @@ eval "$(zoxide init --cmd cd  zsh)"
 
 bindkey "^R" history-incremental-search-backward
 
-ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+alias vim="nvim"
+alias q="exit"
+alias lg="lazygit"
+alias sshs='~/script/search-hosts.sh'
+alias hosts='cat /etc/hosts | tr " " "\n" | fzf'
+alias ls='eza --group-directories-first --icons'
+alias r='fc -s'
+alias act='source env/bin/activate'
+
 
 source ~/.sources/*
 

@@ -8,7 +8,7 @@ MUTE_STATE=$(pactl get-source-mute "$SOURCE" | awk '{print $2}')
 
 if [[ "$MUTE_STATE" == "yes" ]]; then
     pactl set-source-mute "$SOURCE" 0
-    notify-send "🎤 Mic unmuted"
+    notify-send -t 30000 "🎤 Mic unmuted"
 
     # Kill background monitor if running
     if [[ -f "$PIDFILE" ]]; then
@@ -17,7 +17,7 @@ if [[ "$MUTE_STATE" == "yes" ]]; then
     fi
 else
     pactl set-source-mute "$SOURCE" 1
-    notify-send "🔇 Mic muted"
+    notify-send -t 300000 "🔇 Mic muted"
 
     # Start background monitoring
     bash "$MONITOR_SCRIPT" "$SOURCE" &

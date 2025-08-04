@@ -110,14 +110,14 @@ return {
 					},
 				},
 			})
-			lspconfig.pyright.setup({
-				capabilities = capabilities,
-				filetypes = { "python" },
-			})
-			lspconfig.ruff.setup({
-				capabilities = capabilities,
-				filetypes = { "python" },
-			})
+			-- 			lspconfig.pyright.setup({
+			-- 				capabilities = capabilities,
+			-- 				filetypes = { "python" },
+			-- 			})
+			-- 			lspconfig.ruff.setup({
+			-- 				capabilities = capabilities,
+			-- 				filetypes = { "python" },
+			-- 			})
 			lspconfig.docker_compose_language_service.setup({
 				capabilities = capabilities,
 			})

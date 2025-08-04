@@ -32,6 +32,7 @@ if [[ "$YETI_CONNECTED" == 1 ]]; then
 
         if [[ "$NULL_SINK_EXISTS" == 0 ]]; then
             pactl load-module module-null-sink sink_name=combined sink_properties=device.description="Combined"
+            # pactl set-default-sink combined
         fi
 
         if [[ "$LOOPBACK_EXISTS" == 0 ]]; then

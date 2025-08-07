@@ -10,6 +10,18 @@ alias ls='eza --group-directories-first --icons'
 alias r='fc -s'
 alias yay="~/.sources/scripts/yay-vesktop.sh"
 
+tmux() {
+    if [ -n "$TMUX" ]; then
+        command tmux "$@"
+        return
+    fi
+
+    if command "tmux ls" >/dev/null 2>&1; then
+        command tmux attach
+    else
+        command tmux new
+    fi
+}
 
 act_env() {
     if [[ -d ".venv" ]]; then
@@ -22,7 +34,7 @@ act_env() {
 }
 
 sudo() {
-  command sudo -E -s "$@"
+    command sudo -E -s "$@"
 }
 
 alias act=act_env

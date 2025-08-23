@@ -12,13 +12,23 @@ alias yay="~/.sources/scripts/yay-vesktop.sh"
 
 tmux() {
     if [ -n "$TMUX" ]; then
+        # Schon in einer tmux-Session → normal weiterreichen
         command tmux "$@"
         return
     fi
 
-    if command "tmux ls" >/dev/null 2>&1; then
-        command tmux attach
+    if [ $# -gt 0 ]; then
+        # Wenn Argumente übergeben werden → normal tmux ausführen
+        command tmux "$@"
+        return
+    fi
+
+    # Keine Argumente übergeben
+    if tmux ls >/dev/null 2>&1; then
+        # Es gibt mindestens eine Session → an erste attachen
+        command tmux attach -t "$(tmux ls -F '#S' | head -n1)"
     else
+        # Keine Sessions → neue erstellen
         command tmux new
     fi
 }

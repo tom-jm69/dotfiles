@@ -151,7 +151,7 @@
     "alias": "gg",
     "tag_start": "{keyword}",
     "tag_end": null,
-    "display_name": "Google Search",
+    "display_name": "DuckDuckGo Search",
     "on_return": null,
     "next_content": null,
     "type": "web_launcher",
@@ -162,8 +162,8 @@
     "async": false,
     "home": "Search",
     "args": {
-      "icon": "google",
-      "search_engine": "google"
+      "icon": "duckduckgo",
+      "search_engine": "duckduckgo"
     },
     "binds": null,
     "actions": null,

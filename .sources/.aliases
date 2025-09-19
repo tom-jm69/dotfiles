@@ -9,6 +9,7 @@ alias hosts='cat /etc/hosts | tr " " "\n" | fzf'
 alias ls='eza --group-directories-first --icons'
 alias r='fc -s'
 alias yay="~/.sources/scripts/yay-vesktop.sh"
+alias pacman="sudo pacman"
 
 tmux() {
     if [ -n "$TMUX" ]; then

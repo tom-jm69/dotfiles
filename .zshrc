@@ -51,24 +51,15 @@ ZSH_THEME="robbyrussell"
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
-#plug "zettlrobert/simple-prompt"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "zap-zsh/vim"
 plug "zsh-history-substring-search"
 plug "ap-zsh/supercharge"
 plug "zap-zsh/exa"
-#plug "romkatv/powerlevel10k"
 plug "kutsan/zsh-system-clipboard"
 
-# Example sourcing of local files
-#plug "$HOME/.config/zsh/aliases.zsh"
-#plug "$HOME/.config/zsh/exports.zsh"
 
-# Load and initialise completion system
-# autoload -Uz compinit
-# compinit
-
-eval "$(zoxide init --cmd cd  zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 bindkey "^R" history-incremental-search-backward
 
@@ -87,9 +78,6 @@ alias act='source env/bin/activate'
 
 source ~/.sources/*
 
-#zprof debug timing
-#eval "$(starship init zsh)"
-#
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!{.git,node_modules}/*"'
@@ -104,6 +92,6 @@ export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --border
     --border=double
       "
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+zstyle ':completion:*' menu select

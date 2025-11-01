@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = Update packagelist after upgrade
+When = PostTransaction
+Exec = /usr/bin/bash -c "/usr/bin/pacman -Q > ~/dotfiles/pacman-package-list.txt"

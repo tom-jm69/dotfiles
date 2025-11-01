@@ -1,0 +1,16 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for pacman
+
+- name: Install required packages
+  ansible.builtin.pacman:
+    name: cronie
+    update_cache: true
+  register: cronie
+
+- name: Create pacman hook to update packagelist
+  ansible.builtin.copy:
+    src: "99-list-installed.hook"
+    dest: "/etc/pacman.d/hooks/99-list-installed.hook"
+  become: true
+

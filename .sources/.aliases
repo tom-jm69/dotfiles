@@ -10,6 +10,7 @@ alias ls='eza --group-directories-first --icons'
 alias r='fc -s'
 alias pacman='sudo pacman'
 alias tmux='~/.config/hypr/scripts/tmux-wrapper.sh'
+alias cat='bat -p'
 
 act_env() {
     if [[ -d ".venv" ]]; then

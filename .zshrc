@@ -81,7 +81,6 @@ source ~/.sources/*
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!{.git,node_modules}/*"'
-export FZF_CTRL_R_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_COMMAND='rg --files --hidden --glob "!{.git,node_modules}/*"'
 export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --border
     --margin=1 --padding=1 --multi --preview '[[ -f {} ]] && bat --color=always {}' --no-mouse \

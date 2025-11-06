@@ -7,6 +7,7 @@ return {
 			local opts = { noremap = true, silent = true }
 
 			vim.keymap.set("n", "<leader>a", mark.add_file, opts)
+			vim.keymap.set("n", "<leader>b", mark.rm_file, opts)
 			vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu, opts)
 
 			vim.keymap.set("n", "<C-b>", function()

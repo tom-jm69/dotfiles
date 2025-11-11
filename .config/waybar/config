@@ -128,8 +128,8 @@
             "format": "",
         },
         "tray": {
-            "icon-size": 16,
-            "spacing": 10
+            "icon-size": 20,
+            "spacing": 10,
         },
 } 
 

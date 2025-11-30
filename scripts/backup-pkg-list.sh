@@ -7,8 +7,6 @@ PACKAGE_FILE_PACMAN_NAME="pacman-pkgs.txt"
 PACKAGELIST_FOREIGN=$(pacman -Qm)
 PACKAGE_FILE_FOREIGN_NAME="foreign-pkgs.txt"
 
-# Get currently installed packages via yay
-
 
 # Define package list directory for the location of the txt file
 PACKAGE_FILE_DIRECTORY="$HOME/pkg-backup/"
@@ -24,5 +22,4 @@ echo "$PACKAGELIST_FOREIGN" > "$PACKAGE_FILE_DIRECTORY/$PACKAGE_FILE_FOREIGN_NAM
 
 # Changing owner to none root
 echo "Changing owner and group to tom..."
-chown tom:tom "$PACKAGE_FILE_DIRECTORY/$PACKAGE_FILE_FOREIGN_NAME"
-chown tom:tom "$PACKAGE_FILE_DIRECTORY/$PACKAGE_FILE_PACMAN_NAME"
+chown -R "$(whoami)":"$(whoami)" "$PACKAGE_FILE_DIRECTORY"

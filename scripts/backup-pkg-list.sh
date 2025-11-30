@@ -21,5 +21,5 @@ echo "Dumping foreign package list..."
 echo "$PACKAGELIST_FOREIGN" > "$PACKAGE_FILE_DIRECTORY/$PACKAGE_FILE_FOREIGN_NAME"
 
 # Changing owner to none root
-echo "Changing owner and group to tom..."
+echo "Changing owner and group to $(whoami)..."
 chown -R "$(whoami)":"$(whoami)" "$PACKAGE_FILE_DIRECTORY"

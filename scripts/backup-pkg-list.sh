@@ -11,7 +11,7 @@ PACKAGE_FILE_FOREIGN_NAME="foreign-pkgs.txt"
 
 
 # Define package list directory for the location of the txt file
-PACKAGE_FILE_DIRECTORY="/home/tom/Documents/pgk-backup/"
+PACKAGE_FILE_DIRECTORY="~/pgk-backup/"
 
 # Create package file directory
 mkdir -p "$PACKAGE_FILE_DIRECTORY"

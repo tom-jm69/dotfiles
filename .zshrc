@@ -61,8 +61,6 @@ plug "zap-zsh/exa"
 plug "kutsan/zsh-system-clipboard"
 
 # Example sourcing of local files
-#plug "$HOME/.config/zsh/aliases.zsh"
-#plug "$HOME/.config/zsh/exports.zsh"
 
 # Load and initialise completion system
 # autoload -Uz compinit
@@ -75,14 +73,6 @@ bindkey "^R" history-incremental-search-backward
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-alias vim="nvim"
-alias q="exit"
-alias lg="lazygit"
-alias sshs='~/script/search-hosts.sh'
-alias hosts='cat /etc/hosts | tr " " "\n" | fzf'
-alias ls='eza --group-directories-first --icons'
-alias r='fc -s'
-alias act='source env/bin/activate'
 
 
 source ~/.sources/*

@@ -29,7 +29,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 # mojo
 export MODULAR_HOME="$HOME/.modular"
 export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
-export PATH="/home/tom/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+export PATH="$HOME/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
 
 # Support colors in less
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 1)
@@ -58,29 +58,30 @@ plug "ap-zsh/supercharge"
 plug "zap-zsh/exa"
 plug "kutsan/zsh-system-clipboard"
 
+# Example sourcing of local files
 
-eval "$(zoxide init --cmd cd zsh)"
+# Load and initialise completion system
+# autoload -Uz compinit
+# compinit
+
+eval "$(zoxide init --cmd cd  zsh)"
 
 bindkey "^R" history-incremental-search-backward
 
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-alias vim="nvim"
-alias q="exit"
-alias lg="lazygit"
-alias sshs='~/script/search-hosts.sh'
-alias hosts='cat /etc/hosts | tr " " "\n" | fzf'
-alias ls='eza --group-directories-first --icons'
-alias r='fc -s'
-alias act='source env/bin/activate'
 
 
 source ~/.sources/*
 
+#zprof debug timing
+#eval "$(starship init zsh)"
+#
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!{.git,node_modules}/*"'
+# export FZF_CTRL_R_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_COMMAND='rg --files --hidden --glob "!{.git,node_modules}/*"'
 export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --border
     --margin=1 --padding=1 --multi --preview '[[ -f {} ]] && bat --color=always {}' --no-mouse \
@@ -91,6 +92,9 @@ export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --border
     --border=double
       "
 
-fpath+=~/.zfunc; autoload -Uz compinit; compinit
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-zstyle ':completion:*' menu select
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -4,30 +4,21 @@ alias vim="nvim"
 alias n="nvim"
 alias q="exit"
 alias lg="lazygit"
-alias sshs='~/script/search-hosts.sh'
 alias hosts='cat /etc/hosts | tr " " "\n" | fzf'
 alias ls='eza --group-directories-first --icons'
 alias r='fc -s'
-alias pacman='sudo pacman'
-alias tmux='~/.config/hypr/scripts/tmux-wrapper.sh'
-alias cat='bat -p'
+alias pacman="sudo pacman"
 
-act_env() {
-    if [[ -d ".venv" ]]; then
-        source ".venv/bin/activate"
-    elif [[ -d "env" ]]; then
-        source "env/bin/activate"
-    else
-        echo "No virtual environment found."
-        exit 1
-    fi
-}
+# scripts
+alias tmux='~/scripts/tmux-wrapper.sh'
+alias sshs='~/scripts/search-hosts.sh'
+
+alias cat="bat -p"
+alias act='source env/bin/activate'
 
 sudo() {
     command sudo -E -s "$@"
 }
-
-alias act=act_env
 
 # Print all 256 colors
 colors() {
@@ -37,6 +28,3 @@ colors() {
     done
     tput sgr0
 }
-alias p='pass fzf'
-alias pws='pass fzf -s'
-alias pw='~/.config/i3/scripts/create_pass_entry.sh'

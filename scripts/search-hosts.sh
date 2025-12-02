@@ -72,6 +72,7 @@ host_list=$(echo "$preview_hosts" | grep -E '^Host |^HostName ' | \
             echo "$host ($hostname)"
         fi
 done)
+host_list=$(echo "$preview_hosts" | grep 'Host ' | cut -d ' ' -f2 | tr ' ' '\n')
 
 # If a specific host is provided as an argument, display its configuration and SSH into it
 if [ -n "$1" ]; then

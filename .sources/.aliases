@@ -11,7 +11,7 @@ alias pacman="sudo pacman"
 
 # scripts
 alias tmux='~/scripts/tmux-wrapper.sh'
-alias sshs='~/scripts/search-hosts.sh'
+alias sshs='lazyssh'
 
 alias cat="bat -p"
 alias act='source env/bin/activate'

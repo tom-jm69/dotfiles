@@ -30,7 +30,7 @@ return {
 				conform.format({
 					lsb_fallback = true,
 					async = false,
-					timeout_ms = 500,
+					timeout_ms = 1000,
 				})
 			end, { desc = "Format file of range in (in visual mode)" })
 		end,

@@ -2,4 +2,8 @@
 inputDevice=alsa_input.usb-Plantronics_Poly_BT700_74C81A3E732547CF9CA353FDC926C95A-00.mono-fallback
 
 [StreamOutputs]
-outputDevice=alsa_output.usb-Plantronics_Poly_BT700_74C81A3E732547CF9CA353FDC926C95A-00.stereo-fallback
+outputDevice=alsa_output.usb-Plantronics_Poly_BT700_74C81A3E732547CF9CA353FDC926C95A-00.analog-stereo
+
+[Window]
+height=2051
+width=1256

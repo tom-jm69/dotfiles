@@ -22,6 +22,7 @@ return {
 				"dockerls",
 				"marksman",
 				"ruff",
+        "qmlls",
 			},
 		},
 	},

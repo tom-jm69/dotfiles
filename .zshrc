@@ -26,11 +26,6 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 . "$HOME/.cargo/env"
 export PATH="$PATH:$HOME/.cargo/bin"
 
-# mojo
-export MODULAR_HOME="$HOME/.modular"
-export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
-export PATH="$HOME/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
-
 # Support colors in less
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 1)
 export LESS_TERMCAP_md=$(tput bold; tput setaf 1)

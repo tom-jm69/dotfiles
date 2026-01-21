@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
-tmux () {
-    if [ -n "$TMUX" ]
-    then
-        command tmux "$@"
-        return
-    fi
-    if [ $# -gt 0 ]
-    then
-        command tmux "$@"
-        return
-    fi
-    if tmux ls > /dev/null 2>&1
-    then
-        command tmux attach -t "$(tmux ls -F '#S' | head -n1)"
-    else
-        command tmux new
-    fi
-}
+# If we're already inside tmux, just delegate.
+if [[ -n "${TMUX:-}" ]]; then
+  exec tmux "$@"
+fi
 
-tmux
+# If user passed any args, just delegate.
+if (( $# > 0 )); then
+  exec tmux "$@"
+fi
+
+# Try to get existing sessions
+sessions="$(tmux list-sessions -F '#S' 2>/dev/null || true)"
+
+if [[ -n "$sessions" ]]; then
+  first_session="$(printf '%s\n' "$sessions" | head -n1)"
+  exec tmux attach -t "$first_session"
+else
+  exec tmux new-session
+fi

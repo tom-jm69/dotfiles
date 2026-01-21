@@ -1,6 +1,5 @@
-#theme = "Afterglow"
 [window]
-opacity = 0.5
+opacity = 0.1
 
 [colors.bright]
 black = "#636363"

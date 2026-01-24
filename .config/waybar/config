@@ -4,7 +4,7 @@
         "reload_style_on_change": true,
         "modules-left": ["custom/notification","clock","tray", "custom/battery_status"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["custom/pc_power", "group/expand","bluetooth","network","battery","pulseaudio, "],
+        "modules-right": ["group/expand","custom/pc_power", "bluetooth","network","battery","pulseaudio, "],
 
         "hyprland/workspaces": {
             "format": "{icon}",
@@ -27,10 +27,11 @@
           "exec": "~/dotfiles/scripts/get-pc-power.sh",
           "interval": 5,
           "return-type": "raw",
-          "format": "󰍹 {} W",
-          "tooltip": "PC power usage",
-          "max-length": 10
-        },
+          "format": "󰍹  {}W",
+          "tooltip": true,
+          "tooltip-format": "PC power draw: {} W",
+          "max-length": 12
+       },
       "clock": {
         "format": "{:%H:%M}  ",
         "format-alt": "{:%A, %B %d, %Y (%R)}  ",

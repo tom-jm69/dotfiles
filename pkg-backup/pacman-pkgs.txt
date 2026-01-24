@@ -517,6 +517,7 @@ hyprtoolkit 0.5.2-1
 hyprutils 0.11.0-1
 hyprwayland-scanner 0.4.5-1
 hyprwire 0.2.1-2
+hytale-launcher-bin 2026.01.20.c4047e3-1
 i2c-ch341-dkms 20210501-1
 i2c-tools 4.4-3
 i3-wm 4.25-1

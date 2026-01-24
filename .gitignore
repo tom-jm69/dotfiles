@@ -2,6 +2,7 @@
 __pycache__
 node_modules
 env
+.env
 lib
 .config/spicetify/Extracted
 .config/spicetify/Backup

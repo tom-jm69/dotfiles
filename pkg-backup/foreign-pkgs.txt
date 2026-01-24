@@ -41,6 +41,7 @@ http-parser 2.9.4-2
 httpfs2-2gbplus 0.1.5-1
 hyprdvd 0.5.1-2
 hyprland-protocols-git 0.7.0.r1.g3f3860b-1
+hytale-launcher-bin 2026.01.20.c4047e3-1
 i2c-ch341-dkms 20210501-1
 i3lock-color 2.13.c.5-3
 iwdgui 0.3.0-3

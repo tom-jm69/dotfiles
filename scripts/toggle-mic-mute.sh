@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SOURCE=$(pactl get-default-source)
-MONITOR_SCRIPT=~/dotfiles/.config/hypr/scripts/mic-monitor.sh
+MONITOR_SCRIPT=~/dotfiles/scripts/mic-monitor.sh
 PIDFILE="/tmp/mic_monitor.pid"
 ICON_MIC_ON="microphone-sensitivity-high-symbolic"
 ICON_MIC_OFF="microphone-sensitivity-muted-symbolic"

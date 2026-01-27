@@ -1,0 +1,69 @@
+@import url("../../.cache/wal/colors-waybar.css");
+
+/* ---------- GLOBAL ---------- */
+* {
+  font-size: 22px;
+  font-family: "CodeNewRoman Nerd Font Propo";
+  text-align: center;
+}
+
+/* ---------- MAIN WINDOW (Waybar pill equivalent) ---------- */
+#window {
+  padding: 7px;
+  margin: 10px 10px 5px 0px;
+  border-radius: 10px;
+
+  /* background #1c2049 -> rgb(28, 32, 73) */
+  background-color: rgba(28, 32, 73, 0.6);
+
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Prevent inner widgets from repainting background */
+#outer-box,
+#inner-box,
+#scroll {
+  background-color: transparent;
+}
+
+/* ---------- INPUT ---------- */
+#input {
+  margin: 0px 0px 7px 0px;
+  padding: 0px 5px;
+  border-radius: 10px;
+
+  background-color: rgba(28, 32, 73, 0.6);
+
+  /* foreground #c8e2de -> rgb(200, 226, 222) */
+  color: rgba(200, 226, 222, 1);
+
+  box-shadow: none;
+}
+
+/* ---------- ENTRIES ---------- */
+#entry {
+  padding: 4px 6px;
+  margin: 2px 0px;
+  border-radius: 10px;
+
+  color: rgba(200, 226, 222, 1);
+}
+
+/* ---------- SELECTED ENTRY ---------- */
+#entry:selected,
+#entry:focus {
+  color: @color9;
+
+  /* accent #5AB0C4 -> rgb(90, 176, 196) */
+  color: rgba(90, 176, 196, 1);
+
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Text inherits entry color */
+#text {
+  color: inherit;
+}
+#text:selected {
+  color: inherit;
+}

@@ -124,6 +124,7 @@ ttf-joypixels 9.0.0-1
 ttf-maple 7.0-1
 ttf-symbola 14.00-2
 vesktop-bin 1.6.3-1
+vi 1:070224-6
 waypaper 2.7-1
 wlogout 1.2.2-0
 xautolock 2.2-8

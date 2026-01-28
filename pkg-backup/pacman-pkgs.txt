@@ -2241,7 +2241,6 @@ wlroots0.17 0.17.4-4
 wlroots0.18 0.18.3-1
 woff2 1.0.2-6
 woff2-font-awesome 7.1.0-1
-wofi 1.5.1-1
 wolfssl 5.8.4-1
 wpa_supplicant 2:2.11-3
 wpebackend-fdo 1.16.1-1

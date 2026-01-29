@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+# git
+alias gc='git clone "$@"'
 alias vim="nvim"
 alias n="nvim"
 alias q="exit"

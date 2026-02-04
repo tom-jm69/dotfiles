@@ -8,6 +8,7 @@ alias hosts='cat /etc/hosts | tr " " "\n" | fzf'
 alias ls='eza --group-directories-first --icons'
 alias r='fc -s'
 alias pacman="sudo pacman"
+alias hashpw="~/dotfiles/scripts/hash.sh"
 
 # scripts
 #alias tmux='~/scripts/tmux-wrapper.sh'

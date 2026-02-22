@@ -22,6 +22,8 @@ export GTK_THEME=Adwaita:dark
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+
+export PATH=$PATH:$HOME/.config/quickshell
 # cargo/rust
 . "$HOME/.cargo/env"
 export PATH="$PATH:$HOME/.cargo/bin"

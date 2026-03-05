@@ -2,9 +2,9 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["custom/notification","clock","tray", "custom/battery_status"],
+        "modules-left": ["custom/notification","clock","tray"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["group/expand","custom/battery_status", "bluetooth","network","disk","battery"],
+        "modules-right": ["group/expand", "bluetooth","network","disk"],
 
 
         "hyprland/workspaces": {
@@ -103,26 +103,6 @@
           "path": "/",
           "format": "/ {percentage_used}% ",
           "tooltip-format": "/\nUsed: {used}\nFree: {free}\nTotal: {total}"
-        },
-        "battery": {
-            "interval":30,
-            "states": {
-                "good": 95,
-                "warning": 30,
-                "critical": 20
-            },
-            "format": "{capacity}% {icon}",
-            "format-charging": "{capacity}% 󰂄",
-            "format-plugged": "{capacity}% 󰂄 ",
-            "format-alt": "{time} {icon}",
-            "format-icons": [
-                "󰁻",
-            "󰁼",
-            "󰁾",
-            "󰂀",
-            "󰂂",
-            "󰁹"
-            ],
         },
         "custom/expand": {
             "format": "",
